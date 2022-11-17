@@ -1,6 +1,12 @@
-# ISE_P2_PROJ
-## Project for ISE Period 2
-### Subject: automatic plant watering
+## ISE_P2_PROJ
+Project for ISE Period 2
+
+
+
+
+
+
+Subject: automatic plant watering
 
 
 ### Functional requirements:
