@@ -2,10 +2,6 @@
 ## **Project for ISE Period 2**
 
 
-
-
-
-
 Subject: Automated plant growing
 
 
@@ -26,3 +22,16 @@ Subject: Automated plant growing
 - control grow lamp
 - data visualization
 - state visualtization(stoplicht lamp/notificaties)
+
+
+
+
+
+
+
+
+
+### **To Do:**
+- [x] Decide on functional requirements
+- [ ] Write Working Plan
+- [ ] tbc
