@@ -4,7 +4,7 @@
 
 Subject: Automated plant growing
 
-\n\n\n
+</br></br></br>
 
 ### **Functional requirements:**
 
