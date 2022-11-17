@@ -4,7 +4,7 @@
 
 Subject: Automated plant growing
 
-</br>
+</br></br>
 
 ### **Functional requirements:**
 
@@ -16,6 +16,7 @@ Subject: Automated plant growing
 - measure light intensity
 - measure salinity
 
+
 #### Actions/Outputs
 - give set amount of water
 - control air flow
@@ -24,10 +25,10 @@ Subject: Automated plant growing
 - data visualization
 - state visualtization(stoplight lamp/notifications)
 
-</br>
+</br></br>
 
 
 ### **To Do:**
 - [x] Decide on functional requirements
 - [ ] Write Working Plan
-- [ ] tbc
+- [ ] Design FSM(Finite State Machine)
