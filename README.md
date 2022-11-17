@@ -1,9 +1,9 @@
-### ISE_P2_PROJ
+# ISE_P2_PROJ
 ## Project for ISE Period 2
-# Subject: automatic plant watering
+### Subject: automatic plant watering
 
 
-# Functional requirements:
+### Functional requirements:
 - measure soil moisture
 - measure humidity
 - measure temperature
