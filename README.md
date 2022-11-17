@@ -1,5 +1,5 @@
 
-## Project for ISE Period 2
+## **Project for ISE Period 2**
 
 
 
@@ -9,9 +9,9 @@
 Subject: Automated plant growing
 
 
-### Functional requirements:
+### **Functional requirements:**
 
-##### Inputs
+#### Inputs
 - measure soil moisture
 - measure soil temperature
 - measure air humidity
@@ -19,7 +19,7 @@ Subject: Automated plant growing
 - measure light intensity
 - measure salinity
 
-##### Actions/Outputs
+#### Actions/Outputs
 - give set amount of water
 - control air flow
 - control heating radiator
