@@ -4,7 +4,7 @@
 
 Subject: Automated plant growing
 
-![Watering a plant](images/wateringplantdrawing.jpg)
+![Watering a plant](/images/wateringplantdrawing.jpg)
 
 ### **Functional requirements:**
 
