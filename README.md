@@ -4,7 +4,7 @@
 
 Subject: Automated plant growing
 
-</br></br></br>
+</br>
 
 ### **Functional requirements:**
 
@@ -22,14 +22,9 @@ Subject: Automated plant growing
 - control heating radiator
 - control grow lamp
 - data visualization
-- state visualtization(stoplicht lamp/notificaties)
+- state visualtization(stoplight lamp/notifications)
 
-
-
-
-
-
-
+</br>
 
 
 ### **To Do:**
