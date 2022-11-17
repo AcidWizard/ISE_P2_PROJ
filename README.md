@@ -6,7 +6,7 @@ Project for ISE Period 2
 
 
 
-Subject: automatic plant watering
+Subject: Automated plant growing
 
 
 ### Functional requirements:
