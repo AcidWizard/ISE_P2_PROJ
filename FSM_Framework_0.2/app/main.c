@@ -35,6 +35,7 @@
 
 extern char * eventEnumToText[];
 extern char * stateEnumToText[];
+extern char * lightStateEnumToText[];
 
 event_t event;
 state_t state;
@@ -42,6 +43,7 @@ state_t state;
 
 // Functions(simulation) run in subsystems
 event_t InitialiseSubsystems(void);
+void ChangeLight(int);
 
 //Subsystem(simulation) functions
 //EF_ is used for Event Functions
@@ -49,14 +51,12 @@ event_t EF_WAITINPUT(void);
 event_t EF_CO2LOW(void);
 event_t EF_MOISTURELOW(void);
 event_t EF_TOOCOLD(void);
-event_t EF_OUTSIDEBOUNDS(void);
 
 ///Helper function example
 void delay_us(uint32_t d);
 
 // Main
-int main(void)
-{
+int main(void) {
 
    /// Define the state machine model
    /// First the state and the pointer to the onEntry and onExit functions
@@ -139,12 +139,18 @@ event_t InitialiseSubsystems(void)
    state = FSM_GetState();
    DCSdebugSystemInfo("S_Init_onEntry:");
    DCSdebugSystemInfo("Current state: %s", stateEnumToText[state]);
-   DSPshow(2,"System Initialized No errors");
+   DSPshow(4,"System Initialized No errors");
 
    return(E_INITSUCCES);
 }
 
+void ChangeLight(int d) {
+    lightstatus = d;
+    DCSdebugSystemInfo("lightstatus variable changed to: %d", d);
+}
+
 void S_waitinput_onEntry(void)  {
+    ChangeLight(0);
     showCurrentState();
 
     event_t nextevent;
@@ -164,7 +170,7 @@ void S_checkchange_onEntry(void) {
     int function;
 
     /// Show user information
-    DSPshow(2,"Insert Changed Situation");
+    DSPshow(4,"Insert Changed Situation");
     function = DCSsimulationSystemInputChar("\n"
                                             "Press N for no change\n"
                                             "Press C for changed CO2 level\n"
@@ -193,7 +199,7 @@ void S_checkchange_onEntry(void) {
             FSM_AddEvent(nextevent);
             break;
         case 'E':
-            nextevent = EF_OUTSIDEBOUNDS();
+            nextevent = E_OUTSIDEBOUNDS;
             FSM_AddEvent(nextevent);
             break;
         default:
@@ -203,52 +209,54 @@ void S_checkchange_onEntry(void) {
 }
 
 
-void S_statuslight_onEntry(void) {
-    showCurrentState();
-    event_t nextevent;
-
-    /// Simulate the initialisation
-    nextevent = empty();// insert function to run
-
-    FSM_AddEvent(nextevent);           /// Internal generated event
-}
 
 void S_logerror_onEntry(void) {
+    ChangeLight(2);
     showCurrentState();
     event_t nextevent;
 
+    DSPshow(4, "Logging Error");
     /// Simulate the initialisation
-    nextevent = empty();// insert function to run
+    nextevent = E_ERRORLOGGED;// insert function to run
 
     FSM_AddEvent(nextevent);           /// Internal generated event
 }
 
 void S_airflow_onEntry(void) {
+    ChangeLight(1);
     showCurrentState();
     event_t nextevent;
 
+    DSPshow(4, "Opening window");
+
     /// Simulate the initialisation
-    nextevent = empty();// insert function to run
+    nextevent = E_RESET;// insert function to run
 
     FSM_AddEvent(nextevent);           /// Internal generated event
 }
 
 void S_moisturize_onEntry(void) {
+    ChangeLight(1);
     showCurrentState();
     event_t nextevent;
 
+    DSPshow(4, "Moisturizing air");
+
     /// Simulate the initialisation
-    nextevent = empty();// insert function to run
+    nextevent = E_RESET;// insert function to run
 
     FSM_AddEvent(nextevent);           /// Internal generated event
 }
 
 void S_heat_onEntry(void) {
+    ChangeLight(1);
     showCurrentState();
     event_t nextevent;
 
+    DSPshow(4, "Heating plant");
+
     /// Simulate the initialisation
-    nextevent = empty();// insert function to run
+    nextevent = E_RESET;// insert function to run
 
     FSM_AddEvent(nextevent);           /// Internal generated event
 }
@@ -263,16 +271,16 @@ void delay_us(uint32_t d)
 void showCurrentState(void) {
     /// initialize needed variable
     state_t state;
-
     /// fetch current state from FSM-framework
     state = FSM_GetState();
 
     /// Show current state to user
+    DSPshow(2, "Lightstatus: %s", lightStateEnumToText[lightstatus]);
     DCSdebugSystemInfo("Current State: %s", stateEnumToText[state]);
 }
 
 event_t EF_WAITINPUT(void) {
-    DSPshow(2,"Awaiting Input");
+    DSPshow(4, "Awaiting Input");
     return E_INPUTCHANGED;
 }
 
@@ -284,13 +292,13 @@ event_t EF_CO2LOW(void) {
     fgets(input, sizeof(input), stdin); /// get user input
     value = atof(input);
 
-    if (value < 20 & value > 10) {
+    if ((value < 20) & (value > 10)) {
         return E_CO2LOW;
     }
-    else if (value < 25 & value > 20) {
+    else if ((value < 25) & (value > 20)) {
         return E_NOACTION;
     }
-    else return E_OUTSIDEBOUNDS;
+    return E_OUTSIDEBOUNDS;
 }
 
 event_t EF_MOISTURELOW(void) {
@@ -301,13 +309,13 @@ event_t EF_MOISTURELOW(void) {
     fgets(input, sizeof(input), stdin); /// get user input
     value = atof(input);
 
-    if (value < 20 & value > 10) {
+    if ((value < 20) & (value > 10)) {
         return E_MOISTURELOW;
     }
-    else if (value < 25 & value > 20) {
+    else if ((value < 25) & (value > 20)) {
         return E_NOACTION;
     }
-    else return E_OUTSIDEBOUNDS;
+    return E_OUTSIDEBOUNDS;
 }
 
 event_t EF_TOOCOLD(void) {
@@ -318,15 +326,11 @@ event_t EF_TOOCOLD(void) {
     fgets(input, sizeof(input), stdin); /// get user input
     value = atof(input);
 
-    if (value < 20 & value > 10) {
+    if ((value < 20) & (value > 10)) {
         return E_TOOCOLD;
     }
-    else if (value < 25 & value > 20) {
+    else if ((value < 25) & (value > 20)) {
         return E_NOACTION;
     }
-    else return E_OUTSIDEBOUNDS;
-}
-
-event_t EF_OUTSIDEBOUNDS(void) {
     return E_OUTSIDEBOUNDS;
 }

@@ -10,3 +10,10 @@ char * stateEnumToText[] =
    "S_MOISTURIZE",
    "S_HEAT"
 };
+
+char * lightStateEnumToText[] =
+{
+   "GREEN",
+   "ORANGE",
+   "RED"
+};
