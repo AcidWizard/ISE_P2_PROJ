@@ -23,6 +23,7 @@
 #include "console_functions/display.h"
 #include "console_functions/devConsole.h"
 
+
 typedef enum {
    UNLOCKED,                ///< Used for initialisation of an event variable
    LOCKED,
@@ -75,19 +76,35 @@ int main(void)
 
    /// Define the state machine model
    /// First the state and the pointer to the onEntry and onExit functions
-   //           State                           onEntry()               onExit()
-   FSM_AddState(S_START,      &(state_funcs_t){  NULL,                  NULL               });
-   FSM_AddState(S_INIT,       &(state_funcs_t){  S_Init_onEntry,        S_Init_onExit      });
-   FSM_AddState(S_LOCKED,     &(state_funcs_t){  S_Locked_onEntry,      NULL               });
-   FSM_AddState(S_UNLOCKED,   &(state_funcs_t){  S_Unlocked_onEntry,    NULL               });
+   //           State                           onEntry()                   onExit()
+   FSM_AddState(S_START,        &(state_funcs_t){  NULL,                    NULL               });
+   FSM_AddState(S_INIT,         &(state_funcs_t){  S_Init_onEntry,          S_Init_onExit      });
+   FSM_AddState(S_WAITINPUT,    &(state_funcs_t){  S_Locked_onEntry,        NULL               });
+   FSM_AddState(S_CHECKCHANGE,  &(state_funcs_t){  S_checkchange_onEntry,   NULL               });
+   FSM_AddState(S_STATUSLIGHT,  &(state_funcs_t){  S_statuslight_onEntry,   NULL               });
+   FSM_AddState(S_LOGERROR,     &(state_funcs_t){  S_logerror_onEntry,      NULL               });
+   FSM_AddState(S_AIRFLOW,      &(state_funcs_t){  S_airflow_onEntry,       NULL               });
+   FSM_AddState(S_MOISTURIZE,   &(state_funcs_t){  S_moisturize_onEntry,    NULL               });
+   FSM_AddState(S_HEAT,         &(state_funcs_t){  S_heat_onEntry,          NULL               });
+
+
+
 
    /// Second the transitions
    //                                 From            Event                To
    FSM_AddTransition(&(transition_t){ S_START,        E_INIT,              S_INIT     });
-   FSM_AddTransition(&(transition_t){ S_INIT,         E_LOCK,              S_LOCKED     });
-   FSM_AddTransition(&(transition_t){ S_LOCKED,       E_COIN,              S_UNLOCKED   });
-   FSM_AddTransition(&(transition_t){ S_UNLOCKED,     E_PASS,              S_LOCKED    });
-   FSM_AddTransition(&(transition_t){ S_UNLOCKED,     E_COIN,              S_UNLOCKED  });
+   FSM_AddTransition(&(transition_t){ S_INIT,         E_INITSUCCES,        S_WAITINPUT     });
+   FSM_AddTransition(&(transition_t){ S_WAITINPUT,    E_INPUTCHANGED,      S_CHECKCHANGE   });
+   FSM_AddTransition(&(transition_t){ S_CHECKCHANGE,  E_NOACTION,          S_WAITINPUT    });
+   FSM_AddTransition(&(transition_t){ S_CHECKCHANGE,  E_OUTSIDEBOUNDS,     S_LOGERROR  });
+   FSM_AddTransition(&(transition_t){ S_CHECKCHANGE,  E_NORMALCHANGE,      S_STATUSLIGHT  });
+   FSM_AddTransition(&(transition_t){ S_LOGERROR,     E_ERRORLOGGED,       S_STATUSLIGHT  });
+   FSM_AddTransition(&(transition_t){ S_STATUSLIGHT,  E_CO2LOW,            S_AIRFLOW  });
+   FSM_AddTransition(&(transition_t){ S_STATUSLIGHT,  E_MOISTURELOW,       S_MOISTURIZE  });
+   FSM_AddTransition(&(transition_t){ S_STATUSLIGHT,  E_TOOCOLD,           S_HEAT  });
+   FSM_AddTransition(&(transition_t){ S_AIRFLOW,      E_RESET,             S_WAITINPUT  });
+   FSM_AddTransition(&(transition_t){ S_MOISTURIZE,   E_RESET,             S_WAITINPUT  });
+   FSM_AddTransition(&(transition_t){ S_HEAT,         E_RESET,             S_WAITINPUT  });
 
    // Should unexpected events in a state be flushed or not?
    FSM_FlushEnexpectedEvents(true);
