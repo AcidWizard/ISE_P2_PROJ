@@ -8,7 +8,6 @@ typedef enum {
    E_INITERROR,
    E_INPUTCHANGED,
    E_NOACTION,
-   E_NORMALCHANGE,         /// to generate and catch an EXECEPTION
    E_OUTSIDEBOUNDS,
    E_ERRORLOGGED,
    E_CO2LOW,

@@ -5,7 +5,6 @@ char * stateEnumToText[] =
    "S_INIT",
    "S_WAITINPUT",
    "S_CHECKCHANGE",
-   "S_STATUSLIGHT",
    "S_LOGERROR",
    "S_AIRFLOW",
    "S_MOISTURIZE",

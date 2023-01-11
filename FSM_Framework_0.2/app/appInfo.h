@@ -2,7 +2,7 @@
 #define APPINFO_H
 
 
-#define APP "Framework example Please change this name in appinfo.h"
-#define VERSION "0.2"
+#define APP "ISE 2 - Plant Module by Gert&Luuk"
+#define VERSION "1.0"
 // #define NOWAIT
 #endif
