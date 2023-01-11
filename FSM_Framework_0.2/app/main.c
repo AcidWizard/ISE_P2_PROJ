@@ -23,17 +23,12 @@
 #include "console_functions/display.h"
 #include "console_functions/devConsole.h"
 
+///Prototypes and Variables
+#include "prototypes.h"
+#include "variables.h"
 
-typedef enum {
-   UNLOCKED,                ///< Used for initialisation of an event variable
-   LOCKED,
-} lockStatus_t;
+/// Own variables
 
-char * lockStatusToText[] =
-{
-   "UNLOCKED",
-   "LOCKED",
-};
 
 
 extern char * eventEnumToText[];
@@ -42,30 +37,14 @@ extern char * stateEnumToText[];
 event_t event;
 state_t state;
 
-int LockStatus = LOCKED;
 
-// Local function prototypes State related
-
-void S_Init_onEntry(void);
-void S_Init_onExit(void);
-
-void S_Locked_onEntry(void);
-
-void S_Unlocked_onEntry(void);
-
-
-///Subsystem initialization (simulation) functions
+// Functions(simulation) run in subsystems
 event_t InitialiseSubsystems(void);
 
-///Subsystem initialization (simulation) functions
-event_t CoinAcceptor(void);
+//Subsystem(simulation) functions
+//EF_ is used for Event Functions
 
-///Subsystem1 (simulation) functions
 
-int LockTurnstile(const int LockStatus);
-int UnlockTurnstile(const int LockStatus);
-
-event_t TurnstileLock(void);
 
 ///Helper function example
 void delay_us(uint32_t d);
@@ -79,7 +58,7 @@ int main(void)
    //           State                           onEntry()                   onExit()
    FSM_AddState(S_START,        &(state_funcs_t){  NULL,                    NULL               });
    FSM_AddState(S_INIT,         &(state_funcs_t){  S_Init_onEntry,          S_Init_onExit      });
-   FSM_AddState(S_WAITINPUT,    &(state_funcs_t){  S_Locked_onEntry,        NULL               });
+   FSM_AddState(S_WAITINPUT,    &(state_funcs_t){  S_waitinput_onEntry,     NULL               });
    FSM_AddState(S_CHECKCHANGE,  &(state_funcs_t){  S_checkchange_onEntry,   NULL               });
    FSM_AddState(S_STATUSLIGHT,  &(state_funcs_t){  S_statuslight_onEntry,   NULL               });
    FSM_AddState(S_LOGERROR,     &(state_funcs_t){  S_logerror_onEntry,      NULL               });
@@ -92,19 +71,24 @@ int main(void)
 
    /// Second the transitions
    //                                 From            Event                To
-   FSM_AddTransition(&(transition_t){ S_START,        E_INIT,              S_INIT     });
-   FSM_AddTransition(&(transition_t){ S_INIT,         E_INITSUCCES,        S_WAITINPUT     });
-   FSM_AddTransition(&(transition_t){ S_WAITINPUT,    E_INPUTCHANGED,      S_CHECKCHANGE   });
-   FSM_AddTransition(&(transition_t){ S_CHECKCHANGE,  E_NOACTION,          S_WAITINPUT    });
-   FSM_AddTransition(&(transition_t){ S_CHECKCHANGE,  E_OUTSIDEBOUNDS,     S_LOGERROR  });
-   FSM_AddTransition(&(transition_t){ S_CHECKCHANGE,  E_NORMALCHANGE,      S_STATUSLIGHT  });
-   FSM_AddTransition(&(transition_t){ S_LOGERROR,     E_ERRORLOGGED,       S_STATUSLIGHT  });
-   FSM_AddTransition(&(transition_t){ S_STATUSLIGHT,  E_CO2LOW,            S_AIRFLOW  });
-   FSM_AddTransition(&(transition_t){ S_STATUSLIGHT,  E_MOISTURELOW,       S_MOISTURIZE  });
-   FSM_AddTransition(&(transition_t){ S_STATUSLIGHT,  E_TOOCOLD,           S_HEAT  });
-   FSM_AddTransition(&(transition_t){ S_AIRFLOW,      E_RESET,             S_WAITINPUT  });
-   FSM_AddTransition(&(transition_t){ S_MOISTURIZE,   E_RESET,             S_WAITINPUT  });
-   FSM_AddTransition(&(transition_t){ S_HEAT,         E_RESET,             S_WAITINPUT  });
+   FSM_AddTransition(&(transition_t){ S_START,        E_INIT,              S_INIT           });
+   FSM_AddTransition(&(transition_t){ S_INIT,         E_INITSUCCES,        S_WAITINPUT      });
+   FSM_AddTransition(&(transition_t){ S_WAITINPUT,    E_INPUTCHANGED,      S_CHECKCHANGE    });
+   FSM_AddTransition(&(transition_t){ S_CHECKCHANGE,  E_NOACTION,          S_WAITINPUT      });
+   FSM_AddTransition(&(transition_t){ S_CHECKCHANGE,  E_OUTSIDEBOUNDS,     S_LOGERROR       });
+   FSM_AddTransition(&(transition_t){ S_CHECKCHANGE,  E_NORMALCHANGE,      S_STATUSLIGHT    });
+   FSM_AddTransition(&(transition_t){ S_LOGERROR,     E_ERRORLOGGED,       S_STATUSLIGHT    });
+   FSM_AddTransition(&(transition_t){ S_STATUSLIGHT,  E_CO2LOW,            S_AIRFLOW        });
+   FSM_AddTransition(&(transition_t){ S_STATUSLIGHT,  E_MOISTURELOW,       S_MOISTURIZE     });
+   FSM_AddTransition(&(transition_t){ S_STATUSLIGHT,  E_TOOCOLD,           S_HEAT           });
+   FSM_AddTransition(&(transition_t){ S_STATUSLIGHT,  E_RESET,             S_WAITINPUT      });
+   FSM_AddTransition(&(transition_t){ S_AIRFLOW,      E_RESET,             S_WAITINPUT      });
+   FSM_AddTransition(&(transition_t){ S_MOISTURIZE,   E_RESET,             S_WAITINPUT      });
+   FSM_AddTransition(&(transition_t){ S_HEAT,         E_RESET,             S_WAITINPUT      });
+
+   /// Use this test function to test your model
+   /// FSM_RevertModel();
+
 
    // Should unexpected events in a state be flushed or not?
    FSM_FlushEnexpectedEvents(true);
@@ -122,48 +106,24 @@ int main(void)
 
 /// Local function prototypes State related
 
+void S_Init_onExit(void)
+{
+
+}
+
 void S_Init_onEntry(void)
 {
    event_t nextevent;
 
    /// Simulate the initialisation
-   nextevent = InitialiseSubsystems();
+   nextevent = InitialiseSubsystems();// insert function to run
 
    FSM_AddEvent(nextevent);           /// Internal generated event
 }
 
-void S_Init_onExit(void)
-{
-   LockStatus = LockTurnstile(LockStatus);
+event_t empty(void) {
+    return E_RESET;
 }
-
-void S_Locked_onEntry(void)
-{
-   event_t nextevent;
-
-   /// Simulate the initialisation
-   nextevent = CoinAcceptor();
-
-   FSM_AddEvent(nextevent);           /// Event generated by CoinAcceptor()
-}
-
-
-void S_Unlocked_onEntry(void)
-{
-   state_t state;
-   event_t nextevent;
-
-   state = FSM_GetState();
-   DCSdebugSystemInfo("S_Pause_onEntry:");
-   DCSdebugSystemInfo("Current state: %s", stateEnumToText[state]);
-
-   /// Simulate the initialisation
-   nextevent = TurnstileLock();       /// Unlock turnstile and wait for pass
-
-   FSM_AddEvent(nextevent);           /// Event generated by TurnstileLock()
-}
-
-
 
 ///Subsystem (simulation) functions
 event_t InitialiseSubsystems(void)
@@ -177,72 +137,71 @@ event_t InitialiseSubsystems(void)
    DCSdebugSystemInfo("S_Init_onEntry:");
    DCSdebugSystemInfo("Current state: %s", stateEnumToText[state]);
    DSPshow(2,"System Initialized No errors");
-   LockStatus = LockTurnstile(LockStatus);
-   DSPshow(3,"Turnstile locked");
 
-   return(E_LOCK);
+   return(E_INITSUCCES);
 }
 
-event_t CoinAcceptor(void)
-{
-   int response;
+void S_waitinput_onEntry(void)  {
+    event_t nextevent;
 
-   DSPshow(4,"Turnstile locked, waiting for a coin");
-   response = DCSsimulationSystemInputChar("Hit 'A' to Insert a Coin", "A");
+    /// Simulate the initialisation
+    nextevent = InitialiseSubsystems();// insert function to run
 
-   switch (response)
-   {
-      case 'A':
-         DSPshow(3,"Coin inserted");
-         return(E_COIN);
-         break;
-      default:
-         DCSdebugSystemInfo("Undefined this should not happen");
-         DCSdebugSystemInfo("Return with event E_EXCEPTION");
-         DCSdebugSystemInfo("next state is undefined");
-         return(E_EXCEPTION);
-   }
+    FSM_AddEvent(nextevent);           /// Internal generated event
 }
 
-int LockTurnstile(const int CurrLockStatus)
-{
-   DCSdebugSystemInfo("Current lockstatus = %s", lockStatusToText[CurrLockStatus]);
-   DCSdebugSystemInfo("New status = %s", lockStatusToText[LOCKED]);
-   return LOCKED;
+void S_checkchange_onEntry(void) {
+    event_t nextevent;
+
+    /// Simulate the initialisation
+    nextevent = empty();// insert function to run
+
+    FSM_AddEvent(nextevent);           /// Internal generated event
 }
 
-int UnlockTurnstile(const int CurrLockStatus)
-{
-   DCSdebugSystemInfo("Current lockstatus = %s", lockStatusToText[CurrLockStatus]);
-   DCSdebugSystemInfo("New status = %s", lockStatusToText[LOCKED]);
-   return UNLOCKED;
+void S_statuslight_onEntry(void) {
+    event_t nextevent;
+
+    /// Simulate the initialisation
+    nextevent = empty();// insert function to run
+
+    FSM_AddEvent(nextevent);           /// Internal generated event
 }
 
+void S_logerror_onEntry(void) {
+    event_t nextevent;
 
-event_t TurnstileLock(void)
-{
-   int response;
-   LockStatus = UnlockTurnstile(LockStatus);
-   DSPshow(4,"Turnstile unlocked, waiting for a pass");
-   response = DCSsimulationSystemInputChar(\
-                 "Turnstile is unlocked, waiting for pass hit P for pass", "P");
-   switch (response)
-   {
-      case 'P':
-         DSPshow(4,"E_PASS turnstile is passed");
-         return(E_PASS);
-         break;
-      default:
-         DCSdebugSystemInfo("Undefined this should not happen");
-         DCSdebugSystemInfo("Return with event E_EXCEPTION");
-         DCSdebugSystemInfo("next state is undefined");
-         return(E_EXCEPTION);
-   }
+    /// Simulate the initialisation
+    nextevent = empty();// insert function to run
+
+    FSM_AddEvent(nextevent);           /// Internal generated event
 }
 
-void soundAlarm(void)
-{
-   DSPshow(6, "System alarm \a\a\a\a\a\a");
+void S_airflow_onEntry(void) {
+    event_t nextevent;
+
+    /// Simulate the initialisation
+    nextevent = empty();// insert function to run
+
+    FSM_AddEvent(nextevent);           /// Internal generated event
+}
+
+void S_moisturize_onEntry(void) {
+    event_t nextevent;
+
+    /// Simulate the initialisation
+    nextevent = empty();// insert function to run
+
+    FSM_AddEvent(nextevent);           /// Internal generated event
+}
+
+void S_heat_onEntry(void) {
+    event_t nextevent;
+
+    /// Simulate the initialisation
+    nextevent = empty();// insert function to run
+
+    FSM_AddEvent(nextevent);           /// Internal generated event
 }
 
 // simulate delay in microseconds

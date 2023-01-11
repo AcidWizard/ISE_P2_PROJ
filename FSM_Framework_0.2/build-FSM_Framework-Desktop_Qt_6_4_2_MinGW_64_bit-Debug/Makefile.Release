@@ -75,7 +75,9 @@ DIST          =  appInfo.h \
 		events.h \
 		fsm.h \
 		fsm_functions/fsm.h \
-		states.h ..\app\console_functions\devConsole.c \
+		prototypes.h \
+		states.h \
+		variables.h ..\app\console_functions\devConsole.c \
 		..\app\console_functions\display.c \
 		..\app\console_functions\keyboard.c \
 		..\app\console_functions\systemErrors.c \
@@ -163,7 +165,9 @@ release/main.o: ../app/main.c ../app/fsm_functions/fsm.h \
 		../app/events.h \
 		../app/console_functions/keyboard.h \
 		../app/console_functions/display.h \
-		../app/console_functions/devConsole.h
+		../app/console_functions/devConsole.h \
+		../app/prototypes.h \
+		../app/variables.h
 	$(CC) -c $(CFLAGS) $(INCPATH) -o release\main.o ..\app\main.c
 
 release/states.o: ../app/states.c 
