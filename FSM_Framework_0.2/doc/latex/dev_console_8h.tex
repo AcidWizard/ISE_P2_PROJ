@@ -1,0 +1,89 @@
+\hypertarget{dev_console_8h}{}\doxysection{app/console\+\_\+functions/dev\+Console.h File Reference}
+\label{dev_console_8h}\index{app/console\_functions/devConsole.h@{app/console\_functions/devConsole.h}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{dev_console_8h_ac9a2e9db3d4bc066ae53f35251ba3635}{DCSinitialise}} (void)
+\item 
+int \mbox{\hyperlink{dev_console_8h_a6289d2f78abf37833efb577635bc0d8c}{DCSsimulation\+System\+Input\+YN}} (const char question\+Text\mbox{[}$\,$\mbox{]})
+\item 
+char \mbox{\hyperlink{dev_console_8h_a7ac095b73b6f061fca0a81a0517a4035}{DCSsimulation\+System\+Input\+Char}} (const char text\mbox{[}$\,$\mbox{]}, const char chrs\mbox{[}$\,$\mbox{]})
+\item 
+int \mbox{\hyperlink{dev_console_8h_a039ae396e168bb5c36e8184f0c7c39c3}{DCSsimulation\+System\+Input\+Integer}} (const char text\mbox{[}$\,$\mbox{]}, int min, int max)
+\item 
+int \mbox{\hyperlink{dev_console_8h_aef4781d6f153f66cdb02cb770d407dc7}{DCSsimulation\+System\+Input}} (const char text\mbox{[}$\,$\mbox{]}, const char fmt\mbox{[}$\,$\mbox{]},...)
+\item 
+void \mbox{\hyperlink{dev_console_8h_a2a508a68c916a8f9f4c251863980fe1a}{DCSdebug\+System\+Info}} (const char fmt\mbox{[}$\,$\mbox{]},...)
+\item 
+void \mbox{\hyperlink{dev_console_8h_aa736b75fe4cc109cc26334415b049895}{DCSsimulation\+System\+Info}} (const char fmt\mbox{[}$\,$\mbox{]},...)
+\item 
+void \mbox{\hyperlink{dev_console_8h_a85be6c7e006b2bb877ae242f726c2a8e}{DCSshow\+System\+Error}} (const char fmt\mbox{[}$\,$\mbox{]},...)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{dev_console_8h_a2a508a68c916a8f9f4c251863980fe1a}\label{dev_console_8h_a2a508a68c916a8f9f4c251863980fe1a}} 
+\index{devConsole.h@{devConsole.h}!DCSdebugSystemInfo@{DCSdebugSystemInfo}}
+\index{DCSdebugSystemInfo@{DCSdebugSystemInfo}!devConsole.h@{devConsole.h}}
+\doxysubsubsection{\texorpdfstring{DCSdebugSystemInfo()}{DCSdebugSystemInfo()}}
+{\footnotesize\ttfamily void DCSdebug\+System\+Info (\begin{DoxyParamCaption}\item[{const char}]{fmt\mbox{[}$\,$\mbox{]},  }\item[{}]{... }\end{DoxyParamCaption})}
+
+Shows debug related message, below the display. Has printf() interface. \mbox{\Hypertarget{dev_console_8h_ac9a2e9db3d4bc066ae53f35251ba3635}\label{dev_console_8h_ac9a2e9db3d4bc066ae53f35251ba3635}} 
+\index{devConsole.h@{devConsole.h}!DCSinitialise@{DCSinitialise}}
+\index{DCSinitialise@{DCSinitialise}!devConsole.h@{devConsole.h}}
+\doxysubsubsection{\texorpdfstring{DCSinitialise()}{DCSinitialise()}}
+{\footnotesize\ttfamily void DCSinitialise (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Initialises the Development Con\+Sole subsystem. \begin{DoxyRefDesc}{Todo}
+\item[\mbox{\hyperlink{todo__todo000001}{Todo}}]Is DCS a subsystem? It is part of a development system. \end{DoxyRefDesc}
+\mbox{\Hypertarget{dev_console_8h_a85be6c7e006b2bb877ae242f726c2a8e}\label{dev_console_8h_a85be6c7e006b2bb877ae242f726c2a8e}} 
+\index{devConsole.h@{devConsole.h}!DCSshowSystemError@{DCSshowSystemError}}
+\index{DCSshowSystemError@{DCSshowSystemError}!devConsole.h@{devConsole.h}}
+\doxysubsubsection{\texorpdfstring{DCSshowSystemError()}{DCSshowSystemError()}}
+{\footnotesize\ttfamily void DCSshow\+System\+Error (\begin{DoxyParamCaption}\item[{const char}]{fmt\mbox{[}$\,$\mbox{]},  }\item[{}]{... }\end{DoxyParamCaption})}
+
+Shows system error related text, below the display. Has printf() interface. If a system error is detected, most of the time the system needs to shutdown (if still possible) or will run at some reduced level of performance (graceful degradation). \mbox{\Hypertarget{dev_console_8h_aa736b75fe4cc109cc26334415b049895}\label{dev_console_8h_aa736b75fe4cc109cc26334415b049895}} 
+\index{devConsole.h@{devConsole.h}!DCSsimulationSystemInfo@{DCSsimulationSystemInfo}}
+\index{DCSsimulationSystemInfo@{DCSsimulationSystemInfo}!devConsole.h@{devConsole.h}}
+\doxysubsubsection{\texorpdfstring{DCSsimulationSystemInfo()}{DCSsimulationSystemInfo()}}
+{\footnotesize\ttfamily void DCSsimulation\+System\+Info (\begin{DoxyParamCaption}\item[{const char}]{fmt\mbox{[}$\,$\mbox{]},  }\item[{}]{... }\end{DoxyParamCaption})}
+
+Shows simulation related text, below the display. Has printf() interface. \mbox{\Hypertarget{dev_console_8h_aef4781d6f153f66cdb02cb770d407dc7}\label{dev_console_8h_aef4781d6f153f66cdb02cb770d407dc7}} 
+\index{devConsole.h@{devConsole.h}!DCSsimulationSystemInput@{DCSsimulationSystemInput}}
+\index{DCSsimulationSystemInput@{DCSsimulationSystemInput}!devConsole.h@{devConsole.h}}
+\doxysubsubsection{\texorpdfstring{DCSsimulationSystemInput()}{DCSsimulationSystemInput()}}
+{\footnotesize\ttfamily int DCSsimulation\+System\+Input (\begin{DoxyParamCaption}\item[{const char}]{text\mbox{[}$\,$\mbox{]},  }\item[{const char}]{fmt\mbox{[}$\,$\mbox{]},  }\item[{}]{... }\end{DoxyParamCaption})}
+
+Prints text and waits for input, Has scanf() interface. \begin{DoxyReturn}{Returns}
+the number of items in the successfully filled. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{dev_console_8h_a7ac095b73b6f061fca0a81a0517a4035}\label{dev_console_8h_a7ac095b73b6f061fca0a81a0517a4035}} 
+\index{devConsole.h@{devConsole.h}!DCSsimulationSystemInputChar@{DCSsimulationSystemInputChar}}
+\index{DCSsimulationSystemInputChar@{DCSsimulationSystemInputChar}!devConsole.h@{devConsole.h}}
+\doxysubsubsection{\texorpdfstring{DCSsimulationSystemInputChar()}{DCSsimulationSystemInputChar()}}
+{\footnotesize\ttfamily char DCSsimulation\+System\+Input\+Char (\begin{DoxyParamCaption}\item[{const char}]{text\mbox{[}$\,$\mbox{]},  }\item[{const char}]{chrs\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+Shows text, user can enter a char. If this char is not in chrs then the user gets the same text extended with AGAIN. \begin{DoxyReturn}{Returns}
+char value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{dev_console_8h_a039ae396e168bb5c36e8184f0c7c39c3}\label{dev_console_8h_a039ae396e168bb5c36e8184f0c7c39c3}} 
+\index{devConsole.h@{devConsole.h}!DCSsimulationSystemInputInteger@{DCSsimulationSystemInputInteger}}
+\index{DCSsimulationSystemInputInteger@{DCSsimulationSystemInputInteger}!devConsole.h@{devConsole.h}}
+\doxysubsubsection{\texorpdfstring{DCSsimulationSystemInputInteger()}{DCSsimulationSystemInputInteger()}}
+{\footnotesize\ttfamily int DCSsimulation\+System\+Input\+Integer (\begin{DoxyParamCaption}\item[{const char}]{text\mbox{[}$\,$\mbox{]},  }\item[{int}]{min,  }\item[{int}]{max }\end{DoxyParamCaption})}
+
+Shows text, user can enter an integer value. If this value is not \texorpdfstring{$>$}{>}= min and \texorpdfstring{$<$}{<}= max, the user gets the same text extended with AGAIN. \begin{DoxyPrecond}{Precondition}
+min \texorpdfstring{$<$}{<} max. 
+\end{DoxyPrecond}
+\begin{DoxyReturn}{Returns}
+entered int value. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{dev_console_8h_a6289d2f78abf37833efb577635bc0d8c}\label{dev_console_8h_a6289d2f78abf37833efb577635bc0d8c}} 
+\index{devConsole.h@{devConsole.h}!DCSsimulationSystemInputYN@{DCSsimulationSystemInputYN}}
+\index{DCSsimulationSystemInputYN@{DCSsimulationSystemInputYN}!devConsole.h@{devConsole.h}}
+\doxysubsubsection{\texorpdfstring{DCSsimulationSystemInputYN()}{DCSsimulationSystemInputYN()}}
+{\footnotesize\ttfamily int DCSsimulation\+System\+Input\+YN (\begin{DoxyParamCaption}\item[{const char}]{question\+Text\mbox{[}$\,$\mbox{]} }\end{DoxyParamCaption})}
+
+Shows question\+Text extended with \textquotesingle{}\mbox{[}y/n\mbox{]}\textquotesingle{}. User can enter Y by only pressing \texorpdfstring{$<$}{<}enter\texorpdfstring{$>$}{>}. \begin{DoxyReturn}{Returns}
+boolean value, equals true if Y has been chosen. 
+\end{DoxyReturn}

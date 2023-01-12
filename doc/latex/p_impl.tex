@@ -1,0 +1,12 @@
+\hypertarget{p_impl_secImplGuidelines}{}\doxysection{Guidelines}\label{p_impl_secImplGuidelines}
+Guidelines for managing complexity and improving readability\+:
+
+
+\begin{DoxyItemize}
+\item implement every subsystem in a separate C module (software component).
+\item a C module consist of at least one header .h file and a related implementation .c file.
+\item naming convention\+: use the name of the subsystem for the name of the C module.
+\item the names of the device API functions should be prefixed by an abbreviation of the device name.
+\item the Hardware IO in the {\itshape HAL} layer is not implemented. IO is simulated.
+\item implement the \mbox{[}Display Simulation\mbox{]} and \mbox{[}Keyboard Simulation\mbox{]} in the modules \mbox{[}Display\mbox{]} and \mbox{[}Keyboard\mbox{]}. 
+\end{DoxyItemize}

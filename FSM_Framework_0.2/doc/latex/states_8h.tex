@@ -1,0 +1,66 @@
+\hypertarget{states_8h}{}\doxysection{app/states.h File Reference}
+\label{states_8h}\index{app/states.h@{app/states.h}}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{states_8h_aa0aafed44fec19806d8f9ad834be1248}{state\+\_\+t}} \{ \newline
+\mbox{\hyperlink{states_8h_aa0aafed44fec19806d8f9ad834be1248affd6a72a39c00123dc36c1d264bfdd3a}{S\+\_\+\+NO}}
+, \mbox{\hyperlink{states_8h_aa0aafed44fec19806d8f9ad834be1248aa070cb67853a2717d04311125e35a923}{S\+\_\+\+START}}
+, \mbox{\hyperlink{states_8h_aa0aafed44fec19806d8f9ad834be1248aabb033d58518dadd28210bc74bef6051}{S\+\_\+\+INIT}}
+, \mbox{\hyperlink{states_8h_aa0aafed44fec19806d8f9ad834be1248aeeabaad2515cafca3c24fcd974c1900e}{S\+\_\+\+WAITINPUT}}
+, \newline
+\mbox{\hyperlink{states_8h_aa0aafed44fec19806d8f9ad834be1248adfcfdbcf1264130604538b8580b39cdd}{S\+\_\+\+CHECKCHANGE}}
+, \mbox{\hyperlink{states_8h_aa0aafed44fec19806d8f9ad834be1248ae104ff126c3e974ad091b2bb64ba93fa}{S\+\_\+\+LOGERROR}}
+, \mbox{\hyperlink{states_8h_aa0aafed44fec19806d8f9ad834be1248ab1cd3517d5a33e1921df1b020c89b337}{S\+\_\+\+AIRFLOW}}
+, \mbox{\hyperlink{states_8h_aa0aafed44fec19806d8f9ad834be1248aaebcaa5781f757c07a3eb4a16b455c1f}{S\+\_\+\+MOISTURIZE}}
+, \newline
+\mbox{\hyperlink{states_8h_aa0aafed44fec19806d8f9ad834be1248a5335120b795dab501f6e120f774043f6}{S\+\_\+\+HEAT}}
+ \}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{states_8h_aa0aafed44fec19806d8f9ad834be1248}\label{states_8h_aa0aafed44fec19806d8f9ad834be1248}} 
+\index{states.h@{states.h}!state\_t@{state\_t}}
+\index{state\_t@{state\_t}!states.h@{states.h}}
+\doxysubsubsection{\texorpdfstring{state\_t}{state\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{states_8h_aa0aafed44fec19806d8f9ad834be1248}{state\+\_\+t}}}
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\_NO@{S\_NO}!states.h@{states.h}}\index{states.h@{states.h}!S\_NO@{S\_NO}}}\mbox{\Hypertarget{states_8h_aa0aafed44fec19806d8f9ad834be1248affd6a72a39c00123dc36c1d264bfdd3a}\label{states_8h_aa0aafed44fec19806d8f9ad834be1248affd6a72a39c00123dc36c1d264bfdd3a}} 
+S\+\_\+\+NO&Used for initialisation if state is not yet known. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\_START@{S\_START}!states.h@{states.h}}\index{states.h@{states.h}!S\_START@{S\_START}}}\mbox{\Hypertarget{states_8h_aa0aafed44fec19806d8f9ad834be1248aa070cb67853a2717d04311125e35a923}\label{states_8h_aa0aafed44fec19806d8f9ad834be1248aa070cb67853a2717d04311125e35a923}} 
+S\+\_\+\+START&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\_INIT@{S\_INIT}!states.h@{states.h}}\index{states.h@{states.h}!S\_INIT@{S\_INIT}}}\mbox{\Hypertarget{states_8h_aa0aafed44fec19806d8f9ad834be1248aabb033d58518dadd28210bc74bef6051}\label{states_8h_aa0aafed44fec19806d8f9ad834be1248aabb033d58518dadd28210bc74bef6051}} 
+S\+\_\+\+INIT&simulates \mbox{[}$\ast$\mbox{]} \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\_WAITINPUT@{S\_WAITINPUT}!states.h@{states.h}}\index{states.h@{states.h}!S\_WAITINPUT@{S\_WAITINPUT}}}\mbox{\Hypertarget{states_8h_aa0aafed44fec19806d8f9ad834be1248aeeabaad2515cafca3c24fcd974c1900e}\label{states_8h_aa0aafed44fec19806d8f9ad834be1248aeeabaad2515cafca3c24fcd974c1900e}} 
+S\+\_\+\+WAITINPUT&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\_CHECKCHANGE@{S\_CHECKCHANGE}!states.h@{states.h}}\index{states.h@{states.h}!S\_CHECKCHANGE@{S\_CHECKCHANGE}}}\mbox{\Hypertarget{states_8h_aa0aafed44fec19806d8f9ad834be1248adfcfdbcf1264130604538b8580b39cdd}\label{states_8h_aa0aafed44fec19806d8f9ad834be1248adfcfdbcf1264130604538b8580b39cdd}} 
+S\+\_\+\+CHECKCHANGE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\_LOGERROR@{S\_LOGERROR}!states.h@{states.h}}\index{states.h@{states.h}!S\_LOGERROR@{S\_LOGERROR}}}\mbox{\Hypertarget{states_8h_aa0aafed44fec19806d8f9ad834be1248ae104ff126c3e974ad091b2bb64ba93fa}\label{states_8h_aa0aafed44fec19806d8f9ad834be1248ae104ff126c3e974ad091b2bb64ba93fa}} 
+S\+\_\+\+LOGERROR&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\_AIRFLOW@{S\_AIRFLOW}!states.h@{states.h}}\index{states.h@{states.h}!S\_AIRFLOW@{S\_AIRFLOW}}}\mbox{\Hypertarget{states_8h_aa0aafed44fec19806d8f9ad834be1248ab1cd3517d5a33e1921df1b020c89b337}\label{states_8h_aa0aafed44fec19806d8f9ad834be1248ab1cd3517d5a33e1921df1b020c89b337}} 
+S\+\_\+\+AIRFLOW&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\_MOISTURIZE@{S\_MOISTURIZE}!states.h@{states.h}}\index{states.h@{states.h}!S\_MOISTURIZE@{S\_MOISTURIZE}}}\mbox{\Hypertarget{states_8h_aa0aafed44fec19806d8f9ad834be1248aaebcaa5781f757c07a3eb4a16b455c1f}\label{states_8h_aa0aafed44fec19806d8f9ad834be1248aaebcaa5781f757c07a3eb4a16b455c1f}} 
+S\+\_\+\+MOISTURIZE&\\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{S\_HEAT@{S\_HEAT}!states.h@{states.h}}\index{states.h@{states.h}!S\_HEAT@{S\_HEAT}}}\mbox{\Hypertarget{states_8h_aa0aafed44fec19806d8f9ad834be1248a5335120b795dab501f6e120f774043f6}\label{states_8h_aa0aafed44fec19806d8f9ad834be1248a5335120b795dab501f6e120f774043f6}} 
+S\+\_\+\+HEAT&\\
+\hline
+
+\end{DoxyEnumFields}

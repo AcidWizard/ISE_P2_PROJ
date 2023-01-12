@@ -1,0 +1,83 @@
+\hypertarget{display_8h}{}\doxysection{FSM\+\_\+\+Framework\+\_\+0.2/app/console\+\_\+functions/display.h File Reference}
+\label{display_8h}\index{FSM\_Framework\_0.2/app/console\_functions/display.h@{FSM\_Framework\_0.2/app/console\_functions/display.h}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{display_8h_a19ffdfbb88b7984ac489cbf8445a34dc}{DSPinitialise}} (void)
+\item 
+void \mbox{\hyperlink{display_8h_ae1ebaffe2e4dd794cc5b80d20dd5c8fb}{DSPclear}} (void)
+\begin{DoxyCompactList}\small\item\em Clears full display (terminal) by executing a terminal command. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{display_8h_a98047d060c242396d1bb682126ee780d}{DSPclear\+Line}} (int row)
+\item 
+void \mbox{\hyperlink{display_8h_a693db29fcd97c6145cc6742e1bb23d69}{DSPshow\+Display}} (void)
+\begin{DoxyCompactList}\small\item\em Shows full display contents. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{display_8h_a952f07d62dc943137800664bdb611cd4}{DSPshow}} (int row, const char fmt\mbox{[}$\,$\mbox{]},...)
+\item 
+void \mbox{\hyperlink{display_8h_aef28e5786cc0f717f8f7d64e69836ad2}{DSPshow\+Delete}} (int row, const char fmt\mbox{[}$\,$\mbox{]},...)
+\begin{DoxyCompactList}\small\item\em Add new text to display in row, deletes all subsequent lines. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{display_8h_ae1ebaffe2e4dd794cc5b80d20dd5c8fb}\label{display_8h_ae1ebaffe2e4dd794cc5b80d20dd5c8fb}} 
+\index{display.h@{display.h}!DSPclear@{DSPclear}}
+\index{DSPclear@{DSPclear}!display.h@{display.h}}
+\doxysubsubsection{\texorpdfstring{DSPclear()}{DSPclear()}}
+{\footnotesize\ttfamily void DSPclear (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Clears full display (terminal) by executing a terminal command. 
+
+\mbox{\Hypertarget{display_8h_a98047d060c242396d1bb682126ee780d}\label{display_8h_a98047d060c242396d1bb682126ee780d}} 
+\index{display.h@{display.h}!DSPclearLine@{DSPclearLine}}
+\index{DSPclearLine@{DSPclearLine}!display.h@{display.h}}
+\doxysubsubsection{\texorpdfstring{DSPclearLine()}{DSPclearLine()}}
+{\footnotesize\ttfamily void DSPclear\+Line (\begin{DoxyParamCaption}\item[{int}]{row }\end{DoxyParamCaption})}
+
+Clears a full line in the display. 
+\begin{DoxyParams}{Parameters}
+{\em row} & display row index \mbox{[}1, DSP\+\_\+\+HEIGHT-\/2\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyPrecond}{Precondition}
+0 \texorpdfstring{$<$}{<} row \texorpdfstring{$<$}{<} DSP\+\_\+\+HEIGHT-\/2 
+\end{DoxyPrecond}
+\mbox{\Hypertarget{display_8h_a19ffdfbb88b7984ac489cbf8445a34dc}\label{display_8h_a19ffdfbb88b7984ac489cbf8445a34dc}} 
+\index{display.h@{display.h}!DSPinitialise@{DSPinitialise}}
+\index{DSPinitialise@{DSPinitialise}!display.h@{display.h}}
+\doxysubsubsection{\texorpdfstring{DSPinitialise()}{DSPinitialise()}}
+{\footnotesize\ttfamily void DSPinitialise (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Initialises the Display (DSP) subsystem and draws an empty display (no text). \mbox{\Hypertarget{display_8h_a952f07d62dc943137800664bdb611cd4}\label{display_8h_a952f07d62dc943137800664bdb611cd4}} 
+\index{display.h@{display.h}!DSPshow@{DSPshow}}
+\index{DSPshow@{DSPshow}!display.h@{display.h}}
+\doxysubsubsection{\texorpdfstring{DSPshow()}{DSPshow()}}
+{\footnotesize\ttfamily void DSPshow (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{const char}]{fmt\mbox{[}$\,$\mbox{]},  }\item[{}]{... }\end{DoxyParamCaption})}
+
+Updates one line in the display. 
+\begin{DoxyParams}{Parameters}
+{\em text} & update text \\
+\hline
+{\em row} & display row index \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{display_8h_aef28e5786cc0f717f8f7d64e69836ad2}\label{display_8h_aef28e5786cc0f717f8f7d64e69836ad2}} 
+\index{display.h@{display.h}!DSPshowDelete@{DSPshowDelete}}
+\index{DSPshowDelete@{DSPshowDelete}!display.h@{display.h}}
+\doxysubsubsection{\texorpdfstring{DSPshowDelete()}{DSPshowDelete()}}
+{\footnotesize\ttfamily void DSPshow\+Delete (\begin{DoxyParamCaption}\item[{int}]{row,  }\item[{const char}]{fmt\mbox{[}$\,$\mbox{]},  }\item[{}]{... }\end{DoxyParamCaption})}
+
+
+
+Add new text to display in row, deletes all subsequent lines. 
+
+\mbox{\Hypertarget{display_8h_a693db29fcd97c6145cc6742e1bb23d69}\label{display_8h_a693db29fcd97c6145cc6742e1bb23d69}} 
+\index{display.h@{display.h}!DSPshowDisplay@{DSPshowDisplay}}
+\index{DSPshowDisplay@{DSPshowDisplay}!display.h@{display.h}}
+\doxysubsubsection{\texorpdfstring{DSPshowDisplay()}{DSPshowDisplay()}}
+{\footnotesize\ttfamily void DSPshow\+Display (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Shows full display contents. 
+

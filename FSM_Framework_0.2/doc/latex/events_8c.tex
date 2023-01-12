@@ -1,0 +1,44 @@
+\hypertarget{events_8c}{}\doxysection{app/events.c File Reference}
+\label{events_8c}\index{app/events.c@{app/events.c}}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \mbox{\hyperlink{events_8c_a518f02b3b45f3f983d8779c85dcc72e5}{event\+Enum\+To\+Text}} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em Finite State Machine Library. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{events_8c_a518f02b3b45f3f983d8779c85dcc72e5}\label{events_8c_a518f02b3b45f3f983d8779c85dcc72e5}} 
+\index{events.c@{events.c}!eventEnumToText@{eventEnumToText}}
+\index{eventEnumToText@{eventEnumToText}!events.c@{events.c}}
+\doxysubsubsection{\texorpdfstring{eventEnumToText}{eventEnumToText}}
+{\footnotesize\ttfamily char$\ast$ event\+Enum\+To\+Text\mbox{[}$\,$\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \textcolor{stringliteral}{"{}E\_NO"{}},\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \textcolor{stringliteral}{"{}E\_INIT"{}},}
+\DoxyCodeLine{\ \ \ \textcolor{stringliteral}{"{}E\_INITERROR"{}},}
+\DoxyCodeLine{\ \ \ \textcolor{stringliteral}{"{}E\_INPUTCHANGED"{}},}
+\DoxyCodeLine{\ \ \ \textcolor{stringliteral}{"{}E\_NOACTION"{}},}
+\DoxyCodeLine{\ \ \ \textcolor{stringliteral}{"{}E\_NORMALCHANGE"{}},}
+\DoxyCodeLine{\ \ \ \textcolor{stringliteral}{"{}E\_OUTSIDEBOUNDS"{}},}
+\DoxyCodeLine{\ \ \ \textcolor{stringliteral}{"{}E\_ERRORLOGGED"{}},}
+\DoxyCodeLine{\ \ \ \textcolor{stringliteral}{"{}E\_CO2LOW"{}},}
+\DoxyCodeLine{\ \ \ \textcolor{stringliteral}{"{}E\_MOISTURELOW"{}},}
+\DoxyCodeLine{\ \ \ \textcolor{stringliteral}{"{}E\_TOOCOLD"{}},}
+\DoxyCodeLine{\ \ \ \textcolor{stringliteral}{"{}E\_RESET"{}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+
+
+Finite State Machine Library. 
+
+Implementation of the finite statemachine for a turnstile as defined by Robert C. Martin in UML Tutorial\+: Finite State Machines Code uses a pre-\/defined state handler (fsm\+\_\+functions) adapted from code created by Hugo Arends, HAN by John van den Hooven
+
+Implementation is based on Figure 2 in the document
+
+This version of the code is a monolitic implementation All functions and subsystem code is implemented in \mbox{\hyperlink{main_8c}{main.\+c}} Development Console Library Prototypes and Variables Own variables 

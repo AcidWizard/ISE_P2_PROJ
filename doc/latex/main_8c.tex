@@ -1,0 +1,260 @@
+\hypertarget{main_8c}{}\doxysection{FSM\+\_\+\+Framework\+\_\+0.2/app/main.c File Reference}
+\label{main_8c}\index{FSM\_Framework\_0.2/app/main.c@{FSM\_Framework\_0.2/app/main.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$unistd.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}fsm\+\_\+functions/fsm.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}console\+\_\+functions/keyboard.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}console\+\_\+functions/display.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}console\+\_\+functions/dev\+Console.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}prototypes.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}variables.\+h\char`\"{}}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{events_8h_a2fb9b58e4e5f14f40af8b4a1425841f8}{event\+\_\+t}} \mbox{\hyperlink{main_8c_a5c3b2d79818531fe81ecb8dd1e8a3af6}{Initialise\+Subsystems}} (void)
+\begin{DoxyCompactList}\small\item\em Subsystem (simulation) functions. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_a2ebd1cd539e49d77331a7ea1648a35ff}{Change\+Light}} (int)
+\item 
+\mbox{\hyperlink{events_8h_a2fb9b58e4e5f14f40af8b4a1425841f8}{event\+\_\+t}} \mbox{\hyperlink{main_8c_ae0391baeb3a46ce8a0ea2322ad3c752b}{EF\+\_\+\+WAITINPUT}} (void)
+\item 
+\mbox{\hyperlink{events_8h_a2fb9b58e4e5f14f40af8b4a1425841f8}{event\+\_\+t}} \mbox{\hyperlink{main_8c_a8a1e0c235b9c61e071a2237d1ed1a96a}{EF\+\_\+\+CO2\+LOW}} (void)
+\item 
+\mbox{\hyperlink{events_8h_a2fb9b58e4e5f14f40af8b4a1425841f8}{event\+\_\+t}} \mbox{\hyperlink{main_8c_aa4262dd35089b81315d064f04ffcac50}{EF\+\_\+\+MOISTURELOW}} (void)
+\item 
+\mbox{\hyperlink{events_8h_a2fb9b58e4e5f14f40af8b4a1425841f8}{event\+\_\+t}} \mbox{\hyperlink{main_8c_a8ace71f6e09d8046472b6aa6e01d0eab}{EF\+\_\+\+TOOCOLD}} (void)
+\item 
+void \mbox{\hyperlink{main_8c_ae36e9692b7eeb609f01c6cafbfb52f3f}{delay\+\_\+us}} (uint32\+\_\+t d)
+\begin{DoxyCompactList}\small\item\em Helper function example. \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{main_8c_a840291bc02cba5474a4cb46a9b9566fe}{main}} (void)
+\item 
+void \mbox{\hyperlink{main_8c_a008ad886709e6ccf8e50313573fdc7a6}{S\+\_\+\+Init\+\_\+on\+Exit}} (void)
+\begin{DoxyCompactList}\small\item\em Local function prototypes State related. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{main_8c_ac5b07d2a0ac85284c29099eee06f0803}{S\+\_\+\+Init\+\_\+on\+Entry}} (void)
+\item 
+\mbox{\hyperlink{events_8h_a2fb9b58e4e5f14f40af8b4a1425841f8}{event\+\_\+t}} \mbox{\hyperlink{main_8c_a504638d51f5e3d39e934067dec7c2232}{empty}} (void)
+\item 
+void \mbox{\hyperlink{main_8c_aec5b635be032e18ae9a15a32e2afc04c}{S\+\_\+waitinput\+\_\+on\+Entry}} (void)
+\item 
+void \mbox{\hyperlink{main_8c_a37e5ea269c879661595338d7bf364913}{S\+\_\+checkchange\+\_\+on\+Entry}} (void)
+\item 
+void \mbox{\hyperlink{main_8c_ad119c0d63dd3be8b17e9b99dbe59e9d4}{S\+\_\+logerror\+\_\+on\+Entry}} (void)
+\item 
+void \mbox{\hyperlink{main_8c_a245c9dad14dfa41a64d92e763d830203}{S\+\_\+airflow\+\_\+on\+Entry}} (void)
+\item 
+void \mbox{\hyperlink{main_8c_aa9b36a89be868f06dc4ba4dd2e26ca35}{S\+\_\+moisturize\+\_\+on\+Entry}} (void)
+\item 
+void \mbox{\hyperlink{main_8c_aedb1b50462641d6d62e0f094a88bdc50}{S\+\_\+heat\+\_\+on\+Entry}} (void)
+\item 
+void \mbox{\hyperlink{main_8c_a179eb18eb4a5d8b51674c14e0b564413}{show\+Current\+State}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \mbox{\hyperlink{main_8c_a518f02b3b45f3f983d8779c85dcc72e5}{event\+Enum\+To\+Text}} \mbox{[}$\,$\mbox{]}
+\begin{DoxyCompactList}\small\item\em Finite State Machine Library. \end{DoxyCompactList}\item 
+char $\ast$ \mbox{\hyperlink{main_8c_aef297cf79b78adeab0e75ed5a7f1763f}{state\+Enum\+To\+Text}} \mbox{[}$\,$\mbox{]}
+\item 
+char $\ast$ \mbox{\hyperlink{main_8c_a05718e6c2b0e932537d471a3b8212be9}{light\+State\+Enum\+To\+Text}} \mbox{[}$\,$\mbox{]}
+\item 
+\mbox{\hyperlink{events_8h_a2fb9b58e4e5f14f40af8b4a1425841f8}{event\+\_\+t}} \mbox{\hyperlink{main_8c_a14bf7995541f5d10c3460075e570d2d8}{event}}
+\item 
+\mbox{\hyperlink{states_8h_aa0aafed44fec19806d8f9ad834be1248}{state\+\_\+t}} \mbox{\hyperlink{main_8c_a499e7824037af983d0524a98081e7f0b}{state}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{main_8c_a2ebd1cd539e49d77331a7ea1648a35ff}\label{main_8c_a2ebd1cd539e49d77331a7ea1648a35ff}} 
+\index{main.c@{main.c}!ChangeLight@{ChangeLight}}
+\index{ChangeLight@{ChangeLight}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{ChangeLight()}{ChangeLight()}}
+{\footnotesize\ttfamily void Change\+Light (\begin{DoxyParamCaption}\item[{int}]{d }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8c_ae36e9692b7eeb609f01c6cafbfb52f3f}\label{main_8c_ae36e9692b7eeb609f01c6cafbfb52f3f}} 
+\index{main.c@{main.c}!delay\_us@{delay\_us}}
+\index{delay\_us@{delay\_us}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{delay\_us()}{delay\_us()}}
+{\footnotesize\ttfamily void delay\+\_\+us (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{d }\end{DoxyParamCaption})}
+
+
+
+Helper function example. 
+
+\mbox{\Hypertarget{main_8c_a8a1e0c235b9c61e071a2237d1ed1a96a}\label{main_8c_a8a1e0c235b9c61e071a2237d1ed1a96a}} 
+\index{main.c@{main.c}!EF\_CO2LOW@{EF\_CO2LOW}}
+\index{EF\_CO2LOW@{EF\_CO2LOW}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{EF\_CO2LOW()}{EF\_CO2LOW()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{events_8h_a2fb9b58e4e5f14f40af8b4a1425841f8}{event\+\_\+t}} EF\+\_\+\+CO2\+LOW (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+change Incline here
+
+get user input\mbox{\Hypertarget{main_8c_aa4262dd35089b81315d064f04ffcac50}\label{main_8c_aa4262dd35089b81315d064f04ffcac50}} 
+\index{main.c@{main.c}!EF\_MOISTURELOW@{EF\_MOISTURELOW}}
+\index{EF\_MOISTURELOW@{EF\_MOISTURELOW}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{EF\_MOISTURELOW()}{EF\_MOISTURELOW()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{events_8h_a2fb9b58e4e5f14f40af8b4a1425841f8}{event\+\_\+t}} EF\+\_\+\+MOISTURELOW (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+change Incline here
+
+get user input\mbox{\Hypertarget{main_8c_a8ace71f6e09d8046472b6aa6e01d0eab}\label{main_8c_a8ace71f6e09d8046472b6aa6e01d0eab}} 
+\index{main.c@{main.c}!EF\_TOOCOLD@{EF\_TOOCOLD}}
+\index{EF\_TOOCOLD@{EF\_TOOCOLD}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{EF\_TOOCOLD()}{EF\_TOOCOLD()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{events_8h_a2fb9b58e4e5f14f40af8b4a1425841f8}{event\+\_\+t}} EF\+\_\+\+TOOCOLD (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+change Incline here
+
+get user input\mbox{\Hypertarget{main_8c_ae0391baeb3a46ce8a0ea2322ad3c752b}\label{main_8c_ae0391baeb3a46ce8a0ea2322ad3c752b}} 
+\index{main.c@{main.c}!EF\_WAITINPUT@{EF\_WAITINPUT}}
+\index{EF\_WAITINPUT@{EF\_WAITINPUT}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{EF\_WAITINPUT()}{EF\_WAITINPUT()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{events_8h_a2fb9b58e4e5f14f40af8b4a1425841f8}{event\+\_\+t}} EF\+\_\+\+WAITINPUT (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8c_a504638d51f5e3d39e934067dec7c2232}\label{main_8c_a504638d51f5e3d39e934067dec7c2232}} 
+\index{main.c@{main.c}!empty@{empty}}
+\index{empty@{empty}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{empty()}{empty()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{events_8h_a2fb9b58e4e5f14f40af8b4a1425841f8}{event\+\_\+t}} empty (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{main_8c_a5c3b2d79818531fe81ecb8dd1e8a3af6}\label{main_8c_a5c3b2d79818531fe81ecb8dd1e8a3af6}} 
+\index{main.c@{main.c}!InitialiseSubsystems@{InitialiseSubsystems}}
+\index{InitialiseSubsystems@{InitialiseSubsystems}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{InitialiseSubsystems()}{InitialiseSubsystems()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{events_8h_a2fb9b58e4e5f14f40af8b4a1425841f8}{event\+\_\+t}} Initialise\+Subsystems (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Subsystem (simulation) functions. 
+
+\mbox{\Hypertarget{main_8c_a840291bc02cba5474a4cb46a9b9566fe}\label{main_8c_a840291bc02cba5474a4cb46a9b9566fe}} 
+\index{main.c@{main.c}!main@{main}}
+\index{main@{main}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{main()}{main()}}
+{\footnotesize\ttfamily int main (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Define the state machine model First the state and the pointer to the on\+Entry and on\+Exit functions
+
+Second the transitions
+
+Use this test function to test your model \mbox{\hyperlink{fsm_8c_a616fcadd22b9cd625a67e92655bf4ddc}{FSM\+\_\+\+Revert\+Model()}};
+
+Start the state machine
+
+Use this test function to test your model \mbox{\hyperlink{fsm_8c_a616fcadd22b9cd625a67e92655bf4ddc}{FSM\+\_\+\+Revert\+Model()}};\mbox{\Hypertarget{main_8c_a245c9dad14dfa41a64d92e763d830203}\label{main_8c_a245c9dad14dfa41a64d92e763d830203}} 
+\index{main.c@{main.c}!S\_airflow\_onEntry@{S\_airflow\_onEntry}}
+\index{S\_airflow\_onEntry@{S\_airflow\_onEntry}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{S\_airflow\_onEntry()}{S\_airflow\_onEntry()}}
+{\footnotesize\ttfamily void S\+\_\+airflow\+\_\+on\+Entry (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Simulate the initialisation
+
+Internal generated event\mbox{\Hypertarget{main_8c_a37e5ea269c879661595338d7bf364913}\label{main_8c_a37e5ea269c879661595338d7bf364913}} 
+\index{main.c@{main.c}!S\_checkchange\_onEntry@{S\_checkchange\_onEntry}}
+\index{S\_checkchange\_onEntry@{S\_checkchange\_onEntry}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{S\_checkchange\_onEntry()}{S\_checkchange\_onEntry()}}
+{\footnotesize\ttfamily void S\+\_\+checkchange\+\_\+on\+Entry (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Show user information
+
+Process the user response and transition to the next state depending on user input.\mbox{\Hypertarget{main_8c_aedb1b50462641d6d62e0f094a88bdc50}\label{main_8c_aedb1b50462641d6d62e0f094a88bdc50}} 
+\index{main.c@{main.c}!S\_heat\_onEntry@{S\_heat\_onEntry}}
+\index{S\_heat\_onEntry@{S\_heat\_onEntry}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{S\_heat\_onEntry()}{S\_heat\_onEntry()}}
+{\footnotesize\ttfamily void S\+\_\+heat\+\_\+on\+Entry (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Simulate the initialisation
+
+Internal generated event\mbox{\Hypertarget{main_8c_ac5b07d2a0ac85284c29099eee06f0803}\label{main_8c_ac5b07d2a0ac85284c29099eee06f0803}} 
+\index{main.c@{main.c}!S\_Init\_onEntry@{S\_Init\_onEntry}}
+\index{S\_Init\_onEntry@{S\_Init\_onEntry}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{S\_Init\_onEntry()}{S\_Init\_onEntry()}}
+{\footnotesize\ttfamily void S\+\_\+\+Init\+\_\+on\+Entry (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Simulate the initialisation
+
+Internal generated event\mbox{\Hypertarget{main_8c_a008ad886709e6ccf8e50313573fdc7a6}\label{main_8c_a008ad886709e6ccf8e50313573fdc7a6}} 
+\index{main.c@{main.c}!S\_Init\_onExit@{S\_Init\_onExit}}
+\index{S\_Init\_onExit@{S\_Init\_onExit}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{S\_Init\_onExit()}{S\_Init\_onExit()}}
+{\footnotesize\ttfamily void S\+\_\+\+Init\+\_\+on\+Exit (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Local function prototypes State related. 
+
+\mbox{\Hypertarget{main_8c_ad119c0d63dd3be8b17e9b99dbe59e9d4}\label{main_8c_ad119c0d63dd3be8b17e9b99dbe59e9d4}} 
+\index{main.c@{main.c}!S\_logerror\_onEntry@{S\_logerror\_onEntry}}
+\index{S\_logerror\_onEntry@{S\_logerror\_onEntry}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{S\_logerror\_onEntry()}{S\_logerror\_onEntry()}}
+{\footnotesize\ttfamily void S\+\_\+logerror\+\_\+on\+Entry (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Simulate the initialisation
+
+Internal generated event\mbox{\Hypertarget{main_8c_aa9b36a89be868f06dc4ba4dd2e26ca35}\label{main_8c_aa9b36a89be868f06dc4ba4dd2e26ca35}} 
+\index{main.c@{main.c}!S\_moisturize\_onEntry@{S\_moisturize\_onEntry}}
+\index{S\_moisturize\_onEntry@{S\_moisturize\_onEntry}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{S\_moisturize\_onEntry()}{S\_moisturize\_onEntry()}}
+{\footnotesize\ttfamily void S\+\_\+moisturize\+\_\+on\+Entry (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Simulate the initialisation
+
+Internal generated event\mbox{\Hypertarget{main_8c_aec5b635be032e18ae9a15a32e2afc04c}\label{main_8c_aec5b635be032e18ae9a15a32e2afc04c}} 
+\index{main.c@{main.c}!S\_waitinput\_onEntry@{S\_waitinput\_onEntry}}
+\index{S\_waitinput\_onEntry@{S\_waitinput\_onEntry}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{S\_waitinput\_onEntry()}{S\_waitinput\_onEntry()}}
+{\footnotesize\ttfamily void S\+\_\+waitinput\+\_\+on\+Entry (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Simulate the initialisation
+
+Internal generated event\mbox{\Hypertarget{main_8c_a179eb18eb4a5d8b51674c14e0b564413}\label{main_8c_a179eb18eb4a5d8b51674c14e0b564413}} 
+\index{main.c@{main.c}!showCurrentState@{showCurrentState}}
+\index{showCurrentState@{showCurrentState}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{showCurrentState()}{showCurrentState()}}
+{\footnotesize\ttfamily void show\+Current\+State (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+initialize needed variable
+
+fetch current state from FSM-\/framework
+
+Show current state to user
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{main_8c_a14bf7995541f5d10c3460075e570d2d8}\label{main_8c_a14bf7995541f5d10c3460075e570d2d8}} 
+\index{main.c@{main.c}!event@{event}}
+\index{event@{event}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{event}{event}}
+{\footnotesize\ttfamily \mbox{\hyperlink{events_8h_a2fb9b58e4e5f14f40af8b4a1425841f8}{event\+\_\+t}} event}
+
+\mbox{\Hypertarget{main_8c_a518f02b3b45f3f983d8779c85dcc72e5}\label{main_8c_a518f02b3b45f3f983d8779c85dcc72e5}} 
+\index{main.c@{main.c}!eventEnumToText@{eventEnumToText}}
+\index{eventEnumToText@{eventEnumToText}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{eventEnumToText}{eventEnumToText}}
+{\footnotesize\ttfamily char$\ast$ event\+Enum\+To\+Text\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+
+
+Finite State Machine Library. 
+
+Implementation of the finite statemachine for a turnstile as defined by Robert C. Martin in UML Tutorial\+: Finite State Machines Code uses a pre-\/defined state handler (fsm\+\_\+functions) adapted from code created by Hugo Arends, HAN by John van den Hooven
+
+Implementation is based on Figure 2 in the document
+
+This version of the code is a monolitic implementation All functions and subsystem code is implemented in \mbox{\hyperlink{main_8c}{main.\+c}} Development Console Library Prototypes and Variables Own variables \mbox{\Hypertarget{main_8c_a05718e6c2b0e932537d471a3b8212be9}\label{main_8c_a05718e6c2b0e932537d471a3b8212be9}} 
+\index{main.c@{main.c}!lightStateEnumToText@{lightStateEnumToText}}
+\index{lightStateEnumToText@{lightStateEnumToText}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{lightStateEnumToText}{lightStateEnumToText}}
+{\footnotesize\ttfamily char$\ast$ light\+State\+Enum\+To\+Text\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+
+\mbox{\Hypertarget{main_8c_a499e7824037af983d0524a98081e7f0b}\label{main_8c_a499e7824037af983d0524a98081e7f0b}} 
+\index{main.c@{main.c}!state@{state}}
+\index{state@{state}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{state}{state}}
+{\footnotesize\ttfamily \mbox{\hyperlink{states_8h_aa0aafed44fec19806d8f9ad834be1248}{state\+\_\+t}} state}
+
+\mbox{\Hypertarget{main_8c_aef297cf79b78adeab0e75ed5a7f1763f}\label{main_8c_aef297cf79b78adeab0e75ed5a7f1763f}} 
+\index{main.c@{main.c}!stateEnumToText@{stateEnumToText}}
+\index{stateEnumToText@{stateEnumToText}!main.c@{main.c}}
+\doxysubsubsection{\texorpdfstring{stateEnumToText}{stateEnumToText}}
+{\footnotesize\ttfamily char$\ast$ state\+Enum\+To\+Text\mbox{[}$\,$\mbox{]}\hspace{0.3cm}{\ttfamily [extern]}}
+

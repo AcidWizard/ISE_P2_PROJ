@@ -1,7 +1,0 @@
-<map id="LockTurnstile" name="LockTurnstile">
-<area shape="rect" id="node1" title="Subsystem1 (simulation) functions." alt="" coords="449,31,548,57"/>
-<area shape="rect" id="node2" href="$a00059.html#a5c3b2d79818531fe81ecb8dd1e8a3af6" title="Subsystem initialization (simulation) functions." alt="" coords="259,5,401,32"/>
-<area shape="rect" id="node5" href="$a00059.html#a008ad886709e6ccf8e50313573fdc7a6" title=" " alt="" coords="108,56,207,83"/>
-<area shape="rect" id="node3" href="$a00059.html#ac5b07d2a0ac85284c29099eee06f0803" title="Local function prototypes State related." alt="" coords="104,5,211,32"/>
-<area shape="rect" id="node4" href="$a00059.html#a840291bc02cba5474a4cb46a9b9566fe" title=" " alt="" coords="5,31,56,57"/>
-</map>

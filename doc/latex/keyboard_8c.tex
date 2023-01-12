@@ -1,0 +1,73 @@
+\hypertarget{keyboard_8c}{}\doxysection{FSM\+\_\+\+Framework\+\_\+0.2/app/console\+\_\+functions/keyboard.c File Reference}
+\label{keyboard_8c}\index{FSM\_Framework\_0.2/app/console\_functions/keyboard.c@{FSM\_Framework\_0.2/app/console\_functions/keyboard.c}}
+{\ttfamily \#include \char`\"{}keyboard.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}dev\+Console.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}display.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$ctype.\+h$>$}\newline
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{keyboard_8c_af43404a599f52e449ff203f6998d75f2}{KYBinitialise}} (void)
+\begin{DoxyCompactList}\small\item\em Initialises the keyboard (KYB) subsystem. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{keyboard_8c_a751036558cf089782c54d6bd7ad5f3e3}{KYBclear}} (void)
+\begin{DoxyCompactList}\small\item\em Empty input buffer (stdin). \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{keyboard_8c_aa647ccf1ed00a48c23266cdd917aa027}{KYBgetchar}} (void)
+\item 
+int \mbox{\hyperlink{keyboard_8c_affd8fad935e8e8403a1f1d357dfb54c7}{KYBgetint}} (int if\+Wrong\+Value)
+\item 
+double \mbox{\hyperlink{keyboard_8c_a54a066b03c8c3cefc007d7387d7a3422}{KYBgetdouble}} (double if\+Wrong\+Value)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{keyboard_8c_a751036558cf089782c54d6bd7ad5f3e3}\label{keyboard_8c_a751036558cf089782c54d6bd7ad5f3e3}} 
+\index{keyboard.c@{keyboard.c}!KYBclear@{KYBclear}}
+\index{KYBclear@{KYBclear}!keyboard.c@{keyboard.c}}
+\doxysubsubsection{\texorpdfstring{KYBclear()}{KYBclear()}}
+{\footnotesize\ttfamily void KYBclear (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Empty input buffer (stdin). 
+
+\mbox{\Hypertarget{keyboard_8c_aa647ccf1ed00a48c23266cdd917aa027}\label{keyboard_8c_aa647ccf1ed00a48c23266cdd917aa027}} 
+\index{keyboard.c@{keyboard.c}!KYBgetchar@{KYBgetchar}}
+\index{KYBgetchar@{KYBgetchar}!keyboard.c@{keyboard.c}}
+\doxysubsubsection{\texorpdfstring{KYBgetchar()}{KYBgetchar()}}
+{\footnotesize\ttfamily char KYBgetchar (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Reads all input characters after pressing Enter. \begin{DoxyPostcond}{Postcondition}
+All remaining buffered characters are removed from the input buffer (stdin). 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+First read character. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{keyboard_8c_a54a066b03c8c3cefc007d7387d7a3422}\label{keyboard_8c_a54a066b03c8c3cefc007d7387d7a3422}} 
+\index{keyboard.c@{keyboard.c}!KYBgetdouble@{KYBgetdouble}}
+\index{KYBgetdouble@{KYBgetdouble}!keyboard.c@{keyboard.c}}
+\doxysubsubsection{\texorpdfstring{KYBgetdouble()}{KYBgetdouble()}}
+{\footnotesize\ttfamily double KYBgetdouble (\begin{DoxyParamCaption}\item[{double}]{if\+Wrong\+Value }\end{DoxyParamCaption})}
+
+Read one double value, remaining buffered characters will be deleted. \begin{DoxyReturn}{Returns}
+the read in double value, or if input is not a double if\+Wrong\+Value will be returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{keyboard_8c_affd8fad935e8e8403a1f1d357dfb54c7}\label{keyboard_8c_affd8fad935e8e8403a1f1d357dfb54c7}} 
+\index{keyboard.c@{keyboard.c}!KYBgetint@{KYBgetint}}
+\index{KYBgetint@{KYBgetint}!keyboard.c@{keyboard.c}}
+\doxysubsubsection{\texorpdfstring{KYBgetint()}{KYBgetint()}}
+{\footnotesize\ttfamily int KYBgetint (\begin{DoxyParamCaption}\item[{int}]{if\+Wrong\+Value }\end{DoxyParamCaption})}
+
+Read one integer value, remaining buffered characters will be deleted. \begin{DoxyReturn}{Returns}
+the read in integer value, or if input is not an integer if\+Wrong\+Value will be returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{keyboard_8c_af43404a599f52e449ff203f6998d75f2}\label{keyboard_8c_af43404a599f52e449ff203f6998d75f2}} 
+\index{keyboard.c@{keyboard.c}!KYBinitialise@{KYBinitialise}}
+\index{KYBinitialise@{KYBinitialise}!keyboard.c@{keyboard.c}}
+\doxysubsubsection{\texorpdfstring{KYBinitialise()}{KYBinitialise()}}
+{\footnotesize\ttfamily void KYBinitialise (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialises the keyboard (KYB) subsystem. 
+

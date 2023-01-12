@@ -1,0 +1,52 @@
+\hypertarget{fsm_8h_source}{}\doxysection{fsm.\+h}
+\label{fsm_8h_source}\index{FSM\_Framework\_0.2/app/fsm\_functions/fsm.h@{FSM\_Framework\_0.2/app/fsm\_functions/fsm.h}}
+\mbox{\hyperlink{fsm_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00032\ \textcolor{preprocessor}{\#ifndef\ FSM\_H\_}}
+\DoxyCodeLine{00033\ \textcolor{preprocessor}{\#define\ FSM\_H\_}}
+\DoxyCodeLine{00034\ }
+\DoxyCodeLine{00035\ \textcolor{preprocessor}{\#include\ <stdbool.h>}}
+\DoxyCodeLine{00036\ \textcolor{preprocessor}{\#include\ <stddef.h>}}
+\DoxyCodeLine{00037\ \textcolor{preprocessor}{\#include\ <stdint.h>}}
+\DoxyCodeLine{00038\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{states_8h}{states.h}}"{}}}
+\DoxyCodeLine{00039\ \textcolor{preprocessor}{\#include\ "{}\mbox{\hyperlink{events_8h}{events.h}}"{}}}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{preprocessor}{\#define\ MAX\_STATES\ \ \ \ \ \ \ \ \ \ \ (20)}}
+\DoxyCodeLine{00042\ \textcolor{preprocessor}{\#define\ MAX\_TRANSITIONS\ \ \ \ \ \ (20)}}
+\DoxyCodeLine{00043\ \textcolor{preprocessor}{\#define\ MAX\_EVENTS\_IN\_BUFFER\ (128)\ }\textcolor{comment}{//\ 2,4,8,16,32,64,128\ or\ 256}}
+\DoxyCodeLine{00044\ }
+\DoxyCodeLine{00045\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct\ }}
+\DoxyCodeLine{00046\ \{}
+\DoxyCodeLine{00047\ \ \ \ void\ (*onEntry)(void);}
+\DoxyCodeLine{00048\ \ \ \ void\ (*onExit)(void);}
+\DoxyCodeLine{00049\ \}\mbox{\hyperlink{structstate__funcs__t}{state\_funcs\_t}};}
+\DoxyCodeLine{00050\ }
+\DoxyCodeLine{00051\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{struct}}
+\DoxyCodeLine{00052\ \{}
+\DoxyCodeLine{00053\ \ \ \ \mbox{\hyperlink{states_8h_aa0aafed44fec19806d8f9ad834be1248}{state\_t}}\ \mbox{\hyperlink{structtransition__t_a143cc5c308ffc0ee6cdbb47ee042aa7d}{from}};}
+\DoxyCodeLine{00054\ \ \ \ \mbox{\hyperlink{events_8h_a2fb9b58e4e5f14f40af8b4a1425841f8}{event\_t}}\ \mbox{\hyperlink{structtransition__t_a14bf7995541f5d10c3460075e570d2d8}{event}};}
+\DoxyCodeLine{00055\ \ \ \ \mbox{\hyperlink{states_8h_aa0aafed44fec19806d8f9ad834be1248}{state\_t}}\ \mbox{\hyperlink{structtransition__t_a78536c0793ae084c72957ef2ee4214ad}{to}};}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \}\mbox{\hyperlink{structtransition__t}{transition\_t}};}
+\DoxyCodeLine{00058\ }
+\DoxyCodeLine{00059\ \textcolor{comment}{//\ Function\ prototypes}}
+\DoxyCodeLine{00098\ \textcolor{comment}{}\mbox{\hyperlink{states_8h_aa0aafed44fec19806d8f9ad834be1248}{state\_t}}\ \mbox{\hyperlink{fsm_8h_a78f08da2cba1026a6339467b0da41bf4}{FSM\_EventHandler}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{states_8h_aa0aafed44fec19806d8f9ad834be1248}{state\_t}}\ state,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{events_8h_a2fb9b58e4e5f14f40af8b4a1425841f8}{event\_t}}\ \mbox{\hyperlink{main_8c_a14bf7995541f5d10c3460075e570d2d8}{event}});}
+\DoxyCodeLine{00099\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{fsm_8h_a810caaa83c83118a51bdbd1d87fa0417}{FSM\_FlushEnexpectedEvents}}(\textcolor{keyword}{const}\ \textcolor{keywordtype}{bool}\ flush);}
+\DoxyCodeLine{00100\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{fsm_8h_a910a3f2f41867bd01f06de491b027cb6}{FSM\_AddState}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{states_8h_aa0aafed44fec19806d8f9ad834be1248}{state\_t}}\ state,\ \textcolor{keyword}{const}\ \mbox{\hyperlink{structstate__funcs__t}{state\_funcs\_t}}\ *funcs);}
+\DoxyCodeLine{00101\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{fsm_8h_a15adcfc70c666f5c8956da799c8a4d87}{FSM\_AddTransition}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{structtransition__t}{transition\_t}}\ *transition);}
+\DoxyCodeLine{00102\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{fsm_8h_a7232dd041375d6585b39999c2b807fd4}{FSM\_AddEvent}}(\textcolor{keyword}{const}\ \mbox{\hyperlink{events_8h_a2fb9b58e4e5f14f40af8b4a1425841f8}{event\_t}}\ \mbox{\hyperlink{main_8c_a14bf7995541f5d10c3460075e570d2d8}{event}});}
+\DoxyCodeLine{00103\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{fsm_8h_adda160066f8e0f5231b74bac683291f6}{FSM\_RunStateMachine}}(\mbox{\hyperlink{states_8h_aa0aafed44fec19806d8f9ad834be1248}{state\_t}}\ init\_state,\ \mbox{\hyperlink{events_8h_a2fb9b58e4e5f14f40af8b4a1425841f8}{event\_t}}\ start\_event);}
+\DoxyCodeLine{00104\ \mbox{\hyperlink{states_8h_aa0aafed44fec19806d8f9ad834be1248}{state\_t}}\ \mbox{\hyperlink{fsm_8h_aa8ce0d4c030e0543443b89f98752d6a8}{FSM\_GetState}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00105\ }
+\DoxyCodeLine{00106\ \mbox{\hyperlink{events_8h_a2fb9b58e4e5f14f40af8b4a1425841f8}{event\_t}}\ \mbox{\hyperlink{fsm_8h_a585470759896acd5c68f02ee7dbbebb2}{FSM\_GetEvent}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00107\ \mbox{\hyperlink{events_8h_a2fb9b58e4e5f14f40af8b4a1425841f8}{event\_t}}\ \mbox{\hyperlink{fsm_8h_aff0eca293353b2ac3d3d2659b0435e94}{FSM\_WaitForEvent}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00108\ \mbox{\hyperlink{events_8h_a2fb9b58e4e5f14f40af8b4a1425841f8}{event\_t}}\ \mbox{\hyperlink{fsm_8h_ac48e5304604c92cdae2219ee9acd72dc}{FSM\_PeekForEvent}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00109\ \textcolor{keywordtype}{bool}\ \ \ \ \mbox{\hyperlink{fsm_8h_a0ec9f3c0e0d78ca8070e50de321f13cb}{FSM\_NoEvents}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00110\ uint8\_t\ \mbox{\hyperlink{fsm_8h_a779ec4b8b7471abd702be7b350adb7a9}{FSM\_NofEvents}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00111\ }
+\DoxyCodeLine{00112\ \textcolor{keywordtype}{void}\ \ \ \ \mbox{\hyperlink{fsm_8h_a616fcadd22b9cd625a67e92655bf4ddc}{FSM\_RevertModel}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00113\ }
+\DoxyCodeLine{00114\ \textcolor{preprocessor}{\#endif\ }\textcolor{comment}{//\ FSM\_H\_}}
+
+\end{DoxyCode}

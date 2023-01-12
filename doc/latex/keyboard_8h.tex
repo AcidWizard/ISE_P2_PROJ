@@ -1,0 +1,68 @@
+\hypertarget{keyboard_8h}{}\doxysection{FSM\+\_\+\+Framework\+\_\+0.2/app/console\+\_\+functions/keyboard.h File Reference}
+\label{keyboard_8h}\index{FSM\_Framework\_0.2/app/console\_functions/keyboard.h@{FSM\_Framework\_0.2/app/console\_functions/keyboard.h}}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{keyboard_8h_af43404a599f52e449ff203f6998d75f2}{KYBinitialise}} (void)
+\begin{DoxyCompactList}\small\item\em Initialises the keyboard (KYB) subsystem. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{keyboard_8h_a751036558cf089782c54d6bd7ad5f3e3}{KYBclear}} (void)
+\begin{DoxyCompactList}\small\item\em Empty input buffer (stdin). \end{DoxyCompactList}\item 
+char \mbox{\hyperlink{keyboard_8h_aa647ccf1ed00a48c23266cdd917aa027}{KYBgetchar}} (void)
+\item 
+int \mbox{\hyperlink{keyboard_8h_affd8fad935e8e8403a1f1d357dfb54c7}{KYBgetint}} (int if\+Wrong\+Value)
+\item 
+double \mbox{\hyperlink{keyboard_8h_a54a066b03c8c3cefc007d7387d7a3422}{KYBgetdouble}} (double if\+Wrong\+Value)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{keyboard_8h_a751036558cf089782c54d6bd7ad5f3e3}\label{keyboard_8h_a751036558cf089782c54d6bd7ad5f3e3}} 
+\index{keyboard.h@{keyboard.h}!KYBclear@{KYBclear}}
+\index{KYBclear@{KYBclear}!keyboard.h@{keyboard.h}}
+\doxysubsubsection{\texorpdfstring{KYBclear()}{KYBclear()}}
+{\footnotesize\ttfamily void KYBclear (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Empty input buffer (stdin). 
+
+\mbox{\Hypertarget{keyboard_8h_aa647ccf1ed00a48c23266cdd917aa027}\label{keyboard_8h_aa647ccf1ed00a48c23266cdd917aa027}} 
+\index{keyboard.h@{keyboard.h}!KYBgetchar@{KYBgetchar}}
+\index{KYBgetchar@{KYBgetchar}!keyboard.h@{keyboard.h}}
+\doxysubsubsection{\texorpdfstring{KYBgetchar()}{KYBgetchar()}}
+{\footnotesize\ttfamily char KYBgetchar (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+Reads all input characters after pressing Enter. \begin{DoxyPostcond}{Postcondition}
+All remaining buffered characters are removed from the input buffer (stdin). 
+\end{DoxyPostcond}
+\begin{DoxyReturn}{Returns}
+First read character. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{keyboard_8h_a54a066b03c8c3cefc007d7387d7a3422}\label{keyboard_8h_a54a066b03c8c3cefc007d7387d7a3422}} 
+\index{keyboard.h@{keyboard.h}!KYBgetdouble@{KYBgetdouble}}
+\index{KYBgetdouble@{KYBgetdouble}!keyboard.h@{keyboard.h}}
+\doxysubsubsection{\texorpdfstring{KYBgetdouble()}{KYBgetdouble()}}
+{\footnotesize\ttfamily double KYBgetdouble (\begin{DoxyParamCaption}\item[{double}]{if\+Wrong\+Value }\end{DoxyParamCaption})}
+
+Read one double value, remaining buffered characters will be deleted. \begin{DoxyReturn}{Returns}
+the read in double value, or if input is not a double if\+Wrong\+Value will be returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{keyboard_8h_affd8fad935e8e8403a1f1d357dfb54c7}\label{keyboard_8h_affd8fad935e8e8403a1f1d357dfb54c7}} 
+\index{keyboard.h@{keyboard.h}!KYBgetint@{KYBgetint}}
+\index{KYBgetint@{KYBgetint}!keyboard.h@{keyboard.h}}
+\doxysubsubsection{\texorpdfstring{KYBgetint()}{KYBgetint()}}
+{\footnotesize\ttfamily int KYBgetint (\begin{DoxyParamCaption}\item[{int}]{if\+Wrong\+Value }\end{DoxyParamCaption})}
+
+Read one integer value, remaining buffered characters will be deleted. \begin{DoxyReturn}{Returns}
+the read in integer value, or if input is not an integer if\+Wrong\+Value will be returned. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{keyboard_8h_af43404a599f52e449ff203f6998d75f2}\label{keyboard_8h_af43404a599f52e449ff203f6998d75f2}} 
+\index{keyboard.h@{keyboard.h}!KYBinitialise@{KYBinitialise}}
+\index{KYBinitialise@{KYBinitialise}!keyboard.h@{keyboard.h}}
+\doxysubsubsection{\texorpdfstring{KYBinitialise()}{KYBinitialise()}}
+{\footnotesize\ttfamily void KYBinitialise (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+Initialises the keyboard (KYB) subsystem. 
+

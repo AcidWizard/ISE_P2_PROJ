@@ -1,0 +1,26 @@
+\hypertarget{system_errors_8h_source}{}\doxysection{system\+Errors.\+h}
+\label{system_errors_8h_source}\index{FSM\_Framework\_0.2/app/console\_functions/systemErrors.h@{FSM\_Framework\_0.2/app/console\_functions/systemErrors.h}}
+\mbox{\hyperlink{system_errors_8h}{Go to the documentation of this file.}}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#ifndef\ SYSTEMERRORS\_H}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#define\ SYSTEMERRORS\_H}}
+\DoxyCodeLine{00003\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{typedef}\ \textcolor{keyword}{enum}\ \{}
+\DoxyCodeLine{00006\ \ \ \ \mbox{\hyperlink{system_errors_8h_ac7659d73a8cdedc08e9f566bb406689cab5d32476c973dcd3b1424a6f7162bdad}{ERR\_INIT\_CNA}},\ }
+\DoxyCodeLine{00007\ \ \ \ \mbox{\hyperlink{system_errors_8h_ac7659d73a8cdedc08e9f566bb406689caf5fda813833bbba4c1529b6aa922feba}{ERR\_INIT\_CLD}},\ \ }
+\DoxyCodeLine{00008\ \ \ \ \mbox{\hyperlink{system_errors_8h_ac7659d73a8cdedc08e9f566bb406689ca0e53baa0c3f8a4d24d866a8a6c6c0424}{ERR\_INIT\_CHD}}\ \ \ }
+\DoxyCodeLine{00009\ \}\ \mbox{\hyperlink{system_errors_8h_ac7659d73a8cdedc08e9f566bb406689c}{error\_t}};}
+\DoxyCodeLine{00010\ }
+\DoxyCodeLine{00012\ \textcolor{keyword}{typedef}\ \textcolor{keywordtype}{unsigned}\ \textcolor{keywordtype}{char}\ \mbox{\hyperlink{system_errors_8h_af31367c04986d13821f0069bd06c0294}{systemErrors\_t}};}
+\DoxyCodeLine{00013\ }
+\DoxyCodeLine{00017\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{system_errors_8h_a38da225ccfc87971539a56103b0f4237}{setSystemErrorBit}}(\mbox{\hyperlink{system_errors_8h_ac7659d73a8cdedc08e9f566bb406689c}{error\_t}}\ err);}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00022\ \textcolor{keywordtype}{int}\ \mbox{\hyperlink{system_errors_8h_a716a73ffc4ebeefc9efa4504b353e4c8}{getSystemErrorBit}}(\mbox{\hyperlink{system_errors_8h_ac7659d73a8cdedc08e9f566bb406689c}{error\_t}}\ err);}
+\DoxyCodeLine{00023\ }
+\DoxyCodeLine{00025\ \mbox{\hyperlink{system_errors_8h_af31367c04986d13821f0069bd06c0294}{systemErrors\_t}}\ \mbox{\hyperlink{system_errors_8h_af2e7dc52f25ca3ba2d5a8c8c24050998}{getSystemErrorBits}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00029\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{char}\ *\mbox{\hyperlink{system_errors_8h_a5c672aa5c3f206305d76f537df7a40d0}{getSystemErrorBitsString}}(\textcolor{keywordtype}{void});}
+\DoxyCodeLine{00030\ }
+\DoxyCodeLine{00031\ \textcolor{preprocessor}{\#endif}}
+
+\end{DoxyCode}

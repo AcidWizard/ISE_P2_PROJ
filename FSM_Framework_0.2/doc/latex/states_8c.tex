@@ -1,0 +1,50 @@
+\hypertarget{states_8c}{}\doxysection{app/states.c File Reference}
+\label{states_8c}\index{app/states.c@{app/states.c}}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+char $\ast$ \mbox{\hyperlink{states_8c_aef297cf79b78adeab0e75ed5a7f1763f}{state\+Enum\+To\+Text}} \mbox{[}$\,$\mbox{]}
+\item 
+char $\ast$ \mbox{\hyperlink{states_8c_a05718e6c2b0e932537d471a3b8212be9}{light\+State\+Enum\+To\+Text}} \mbox{[}$\,$\mbox{]}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{states_8c_a05718e6c2b0e932537d471a3b8212be9}\label{states_8c_a05718e6c2b0e932537d471a3b8212be9}} 
+\index{states.c@{states.c}!lightStateEnumToText@{lightStateEnumToText}}
+\index{lightStateEnumToText@{lightStateEnumToText}!states.c@{states.c}}
+\doxysubsubsection{\texorpdfstring{lightStateEnumToText}{lightStateEnumToText}}
+{\footnotesize\ttfamily char$\ast$ light\+State\+Enum\+To\+Text\mbox{[}$\,$\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \textcolor{stringliteral}{"{}GREEN"{}},}
+\DoxyCodeLine{\ \ \ \textcolor{stringliteral}{"{}ORANGE"{}},}
+\DoxyCodeLine{\ \ \ \textcolor{stringliteral}{"{}RED"{}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{states_8c_aef297cf79b78adeab0e75ed5a7f1763f}\label{states_8c_aef297cf79b78adeab0e75ed5a7f1763f}} 
+\index{states.c@{states.c}!stateEnumToText@{stateEnumToText}}
+\index{stateEnumToText@{stateEnumToText}!states.c@{states.c}}
+\doxysubsubsection{\texorpdfstring{stateEnumToText}{stateEnumToText}}
+{\footnotesize\ttfamily char$\ast$ state\+Enum\+To\+Text\mbox{[}$\,$\mbox{]}}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{\ \ \ \textcolor{stringliteral}{"{}S\_NO"{}},\ }
+\DoxyCodeLine{\ \ \ \textcolor{stringliteral}{"{}S\_START"{}},\ \ \ \ \ \ \ }
+\DoxyCodeLine{\ \ \ \textcolor{stringliteral}{"{}S\_INIT"{}},}
+\DoxyCodeLine{\ \ \ \textcolor{stringliteral}{"{}S\_WAITINPUT"{}},}
+\DoxyCodeLine{\ \ \ \textcolor{stringliteral}{"{}S\_CHECKCHANGE"{}},}
+\DoxyCodeLine{\ \ \ \textcolor{stringliteral}{"{}S\_LOGERROR"{}},}
+\DoxyCodeLine{\ \ \ \textcolor{stringliteral}{"{}S\_AIRFLOW"{}},}
+\DoxyCodeLine{\ \ \ \textcolor{stringliteral}{"{}S\_MOISTURIZE"{}},}
+\DoxyCodeLine{\ \ \ \textcolor{stringliteral}{"{}S\_HEAT"{}}}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}

@@ -1,0 +1,64 @@
+\hypertarget{system_errors_8c}{}\doxysection{app/console\+\_\+functions/system\+Errors.c File Reference}
+\label{system_errors_8c}\index{app/console\_functions/systemErrors.c@{app/console\_functions/systemErrors.c}}
+{\ttfamily \#include \char`\"{}system\+Errors.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$stddef.\+h$>$}\newline
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{system_errors_8c_a38da225ccfc87971539a56103b0f4237}{set\+System\+Error\+Bit}} (\mbox{\hyperlink{system_errors_8h_ac7659d73a8cdedc08e9f566bb406689c}{error\+\_\+t}} err)
+\item 
+int \mbox{\hyperlink{system_errors_8c_a716a73ffc4ebeefc9efa4504b353e4c8}{get\+System\+Error\+Bit}} (\mbox{\hyperlink{system_errors_8h_ac7659d73a8cdedc08e9f566bb406689c}{error\+\_\+t}} err)
+\item 
+\mbox{\hyperlink{system_errors_8h_af31367c04986d13821f0069bd06c0294}{system\+Errors\+\_\+t}} \mbox{\hyperlink{system_errors_8c_af2e7dc52f25ca3ba2d5a8c8c24050998}{get\+System\+Error\+Bits}} (void)
+\item 
+const char $\ast$ \mbox{\hyperlink{system_errors_8c_a5c672aa5c3f206305d76f537df7a40d0}{get\+System\+Error\+Bits\+String}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{system_errors_8c_a716a73ffc4ebeefc9efa4504b353e4c8}\label{system_errors_8c_a716a73ffc4ebeefc9efa4504b353e4c8}} 
+\index{systemErrors.c@{systemErrors.c}!getSystemErrorBit@{getSystemErrorBit}}
+\index{getSystemErrorBit@{getSystemErrorBit}!systemErrors.c@{systemErrors.c}}
+\doxysubsubsection{\texorpdfstring{getSystemErrorBit()}{getSystemErrorBit()}}
+{\footnotesize\ttfamily int get\+System\+Error\+Bit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{system_errors_8h_ac7659d73a8cdedc08e9f566bb406689c}{error\+\_\+t}}}]{err }\end{DoxyParamCaption})}
+
+Set error bit. 
+\begin{DoxyParams}{Parameters}
+{\em err} & error bit index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean value 0 or 1. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{system_errors_8c_af2e7dc52f25ca3ba2d5a8c8c24050998}\label{system_errors_8c_af2e7dc52f25ca3ba2d5a8c8c24050998}} 
+\index{systemErrors.c@{systemErrors.c}!getSystemErrorBits@{getSystemErrorBits}}
+\index{getSystemErrorBits@{getSystemErrorBits}!systemErrors.c@{systemErrors.c}}
+\doxysubsubsection{\texorpdfstring{getSystemErrorBits()}{getSystemErrorBits()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{system_errors_8h_af31367c04986d13821f0069bd06c0294}{system\+Errors\+\_\+t}} get\+System\+Error\+Bits (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+value of system\+Error\+Bits. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{system_errors_8c_a5c672aa5c3f206305d76f537df7a40d0}\label{system_errors_8c_a5c672aa5c3f206305d76f537df7a40d0}} 
+\index{systemErrors.c@{systemErrors.c}!getSystemErrorBitsString@{getSystemErrorBitsString}}
+\index{getSystemErrorBitsString@{getSystemErrorBitsString}!systemErrors.c@{systemErrors.c}}
+\doxysubsubsection{\texorpdfstring{getSystemErrorBitsString()}{getSystemErrorBitsString()}}
+{\footnotesize\ttfamily const char $\ast$ get\+System\+Error\+Bits\+String (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+string showing 8 error bits in binary format. Example\+: \char`\"{}11000000\char`\"{} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{system_errors_8c_a38da225ccfc87971539a56103b0f4237}\label{system_errors_8c_a38da225ccfc87971539a56103b0f4237}} 
+\index{systemErrors.c@{systemErrors.c}!setSystemErrorBit@{setSystemErrorBit}}
+\index{setSystemErrorBit@{setSystemErrorBit}!systemErrors.c@{systemErrors.c}}
+\doxysubsubsection{\texorpdfstring{setSystemErrorBit()}{setSystemErrorBit()}}
+{\footnotesize\ttfamily int set\+System\+Error\+Bit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{system_errors_8h_ac7659d73a8cdedc08e9f566bb406689c}{error\+\_\+t}}}]{err }\end{DoxyParamCaption})}
+
+Set error bit. 
+\begin{DoxyParams}{Parameters}
+{\em err} & error bit index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+previous value error bit. 
+\end{DoxyReturn}

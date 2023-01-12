@@ -1,0 +1,214 @@
+\hypertarget{fsm_8c}{}\doxysection{app/fsm\+\_\+functions/fsm.c File Reference}
+\label{fsm_8c}\index{app/fsm\_functions/fsm.c@{app/fsm\_functions/fsm.c}}
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}fsm.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}events.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}states.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}app\+Info.\+h\char`\"{}}\newline
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{fsm_8c_aaabc6dac31cef2463a2038e4db335a78}{MAX\+\_\+\+EVENTS\+\_\+\+IN\+\_\+\+BUFFER\+\_\+\+MASK}}~(\mbox{\hyperlink{fsm_8h_a045f6561bd654b20f9522ae345e753b7}{MAX\+\_\+\+EVENTS\+\_\+\+IN\+\_\+\+BUFFER}} -\/ 1)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{fsm_8c_a5cf3a6d3a621d1f10f7eb91651840286}{FSM\+\_\+\+Set\+State}} (\mbox{\hyperlink{states_8h_aa0aafed44fec19806d8f9ad834be1248}{state\+\_\+t}} newstate)
+\item 
+\mbox{\hyperlink{states_8h_aa0aafed44fec19806d8f9ad834be1248}{state\+\_\+t}} \mbox{\hyperlink{fsm_8c_aa8ce0d4c030e0543443b89f98752d6a8}{FSM\+\_\+\+Get\+State}} (void)
+\item 
+\mbox{\hyperlink{states_8h_aa0aafed44fec19806d8f9ad834be1248}{state\+\_\+t}} \mbox{\hyperlink{fsm_8c_a78f08da2cba1026a6339467b0da41bf4}{FSM\+\_\+\+Event\+Handler}} (const \mbox{\hyperlink{states_8h_aa0aafed44fec19806d8f9ad834be1248}{state\+\_\+t}} state, const \mbox{\hyperlink{events_8h_a2fb9b58e4e5f14f40af8b4a1425841f8}{event\+\_\+t}} \mbox{\hyperlink{main_8c_a14bf7995541f5d10c3460075e570d2d8}{event}})
+\item 
+void \mbox{\hyperlink{fsm_8c_a810caaa83c83118a51bdbd1d87fa0417}{FSM\+\_\+\+Flush\+Enexpected\+Events}} (const bool flush)
+\item 
+void \mbox{\hyperlink{fsm_8c_a910a3f2f41867bd01f06de491b027cb6}{FSM\+\_\+\+Add\+State}} (const \mbox{\hyperlink{states_8h_aa0aafed44fec19806d8f9ad834be1248}{state\+\_\+t}} state, const \mbox{\hyperlink{structstate__funcs__t}{state\+\_\+funcs\+\_\+t}} $\ast$funcs)
+\item 
+void \mbox{\hyperlink{fsm_8c_a15adcfc70c666f5c8956da799c8a4d87}{FSM\+\_\+\+Add\+Transition}} (const \mbox{\hyperlink{structtransition__t}{transition\+\_\+t}} $\ast$transition)
+\item 
+\mbox{\hyperlink{events_8h_a2fb9b58e4e5f14f40af8b4a1425841f8}{event\+\_\+t}} \mbox{\hyperlink{fsm_8c_ac48e5304604c92cdae2219ee9acd72dc}{FSM\+\_\+\+Peek\+For\+Event}} (void)
+\item 
+bool \mbox{\hyperlink{fsm_8c_a0ec9f3c0e0d78ca8070e50de321f13cb}{FSM\+\_\+\+No\+Events}} (void)
+\item 
+\mbox{\hyperlink{events_8h_a2fb9b58e4e5f14f40af8b4a1425841f8}{event\+\_\+t}} \mbox{\hyperlink{fsm_8c_aff0eca293353b2ac3d3d2659b0435e94}{FSM\+\_\+\+Wait\+For\+Event}} (void)
+\item 
+uint8\+\_\+t \mbox{\hyperlink{fsm_8c_a779ec4b8b7471abd702be7b350adb7a9}{FSM\+\_\+\+Nof\+Events}} (void)
+\item 
+void \mbox{\hyperlink{fsm_8c_a7232dd041375d6585b39999c2b807fd4}{FSM\+\_\+\+Add\+Event}} (const \mbox{\hyperlink{events_8h_a2fb9b58e4e5f14f40af8b4a1425841f8}{event\+\_\+t}} \mbox{\hyperlink{main_8c_a14bf7995541f5d10c3460075e570d2d8}{event}})
+\item 
+\mbox{\hyperlink{events_8h_a2fb9b58e4e5f14f40af8b4a1425841f8}{event\+\_\+t}} \mbox{\hyperlink{fsm_8c_a585470759896acd5c68f02ee7dbbebb2}{FSM\+\_\+\+Get\+Event}} (void)
+\item 
+void \mbox{\hyperlink{fsm_8c_adda160066f8e0f5231b74bac683291f6}{FSM\+\_\+\+Run\+State\+Machine}} (\mbox{\hyperlink{states_8h_aa0aafed44fec19806d8f9ad834be1248}{state\+\_\+t}} init\+\_\+state, \mbox{\hyperlink{events_8h_a2fb9b58e4e5f14f40af8b4a1425841f8}{event\+\_\+t}} start\+\_\+event)
+\item 
+void \mbox{\hyperlink{fsm_8c_a616fcadd22b9cd625a67e92655bf4ddc}{FSM\+\_\+\+Revert\+Model}} (void)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{structstate__funcs__t}{state\+\_\+funcs\+\_\+t}} \mbox{\hyperlink{fsm_8c_a7b61783e0072144930caffdb82a64868}{state\+\_\+funcs}} \mbox{[}\mbox{\hyperlink{fsm_8h_a9568de9296df1e94aeb0b7f24cc678a9}{MAX\+\_\+\+STATES}}\mbox{]} = \{0\}
+\item 
+\mbox{\hyperlink{structtransition__t}{transition\+\_\+t}} \mbox{\hyperlink{fsm_8c_a6bb16cd8ee49ec10b54647496cf83c4b}{transitions}} \mbox{[}\mbox{\hyperlink{fsm_8h_aeec1679e27970e5a5c2a4c90ef2d1f62}{MAX\+\_\+\+TRANSITIONS}}\mbox{]}
+\item 
+\mbox{\hyperlink{events_8h_a2fb9b58e4e5f14f40af8b4a1425841f8}{event\+\_\+t}} \mbox{\hyperlink{fsm_8c_a1b45099bcbab93540950bf9af7924c3b}{events}} \mbox{[}\mbox{\hyperlink{fsm_8h_a045f6561bd654b20f9522ae345e753b7}{MAX\+\_\+\+EVENTS\+\_\+\+IN\+\_\+\+BUFFER}}\mbox{]}
+\item 
+int \mbox{\hyperlink{fsm_8c_a3b9a5c6d048e3227ba57b672531434ef}{num\+Of\+States}}
+\item 
+int \mbox{\hyperlink{fsm_8c_a7f391370be70481ed08e44d3b1b9c197}{num\+Of\+Transitions}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{fsm_8c_aaabc6dac31cef2463a2038e4db335a78}\label{fsm_8c_aaabc6dac31cef2463a2038e4db335a78}} 
+\index{fsm.c@{fsm.c}!MAX\_EVENTS\_IN\_BUFFER\_MASK@{MAX\_EVENTS\_IN\_BUFFER\_MASK}}
+\index{MAX\_EVENTS\_IN\_BUFFER\_MASK@{MAX\_EVENTS\_IN\_BUFFER\_MASK}!fsm.c@{fsm.c}}
+\doxysubsubsection{\texorpdfstring{MAX\_EVENTS\_IN\_BUFFER\_MASK}{MAX\_EVENTS\_IN\_BUFFER\_MASK}}
+{\footnotesize\ttfamily \#define MAX\+\_\+\+EVENTS\+\_\+\+IN\+\_\+\+BUFFER\+\_\+\+MASK~(\mbox{\hyperlink{fsm_8h_a045f6561bd654b20f9522ae345e753b7}{MAX\+\_\+\+EVENTS\+\_\+\+IN\+\_\+\+BUFFER}} -\/ 1)}
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{fsm_8c_a7232dd041375d6585b39999c2b807fd4}\label{fsm_8c_a7232dd041375d6585b39999c2b807fd4}} 
+\index{fsm.c@{fsm.c}!FSM\_AddEvent@{FSM\_AddEvent}}
+\index{FSM\_AddEvent@{FSM\_AddEvent}!fsm.c@{fsm.c}}
+\doxysubsubsection{\texorpdfstring{FSM\_AddEvent()}{FSM\_AddEvent()}}
+{\footnotesize\ttfamily void FSM\+\_\+\+Add\+Event (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{events_8h_a2fb9b58e4e5f14f40af8b4a1425841f8}{event\+\_\+t}}}]{event }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fsm_8c_a910a3f2f41867bd01f06de491b027cb6}\label{fsm_8c_a910a3f2f41867bd01f06de491b027cb6}} 
+\index{fsm.c@{fsm.c}!FSM\_AddState@{FSM\_AddState}}
+\index{FSM\_AddState@{FSM\_AddState}!fsm.c@{fsm.c}}
+\doxysubsubsection{\texorpdfstring{FSM\_AddState()}{FSM\_AddState()}}
+{\footnotesize\ttfamily void FSM\+\_\+\+Add\+State (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{states_8h_aa0aafed44fec19806d8f9ad834be1248}{state\+\_\+t}}}]{state,  }\item[{const \mbox{\hyperlink{structstate__funcs__t}{state\+\_\+funcs\+\_\+t}} $\ast$}]{funcs }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fsm_8c_a15adcfc70c666f5c8956da799c8a4d87}\label{fsm_8c_a15adcfc70c666f5c8956da799c8a4d87}} 
+\index{fsm.c@{fsm.c}!FSM\_AddTransition@{FSM\_AddTransition}}
+\index{FSM\_AddTransition@{FSM\_AddTransition}!fsm.c@{fsm.c}}
+\doxysubsubsection{\texorpdfstring{FSM\_AddTransition()}{FSM\_AddTransition()}}
+{\footnotesize\ttfamily void FSM\+\_\+\+Add\+Transition (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{structtransition__t}{transition\+\_\+t}} $\ast$}]{transition }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fsm_8c_a78f08da2cba1026a6339467b0da41bf4}\label{fsm_8c_a78f08da2cba1026a6339467b0da41bf4}} 
+\index{fsm.c@{fsm.c}!FSM\_EventHandler@{FSM\_EventHandler}}
+\index{FSM\_EventHandler@{FSM\_EventHandler}!fsm.c@{fsm.c}}
+\doxysubsubsection{\texorpdfstring{FSM\_EventHandler()}{FSM\_EventHandler()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{states_8h_aa0aafed44fec19806d8f9ad834be1248}{state\+\_\+t}} FSM\+\_\+\+Event\+Handler (\begin{DoxyParamCaption}\item[{const \mbox{\hyperlink{states_8h_aa0aafed44fec19806d8f9ad834be1248}{state\+\_\+t}}}]{state,  }\item[{const \mbox{\hyperlink{events_8h_a2fb9b58e4e5f14f40af8b4a1425841f8}{event\+\_\+t}}}]{event }\end{DoxyParamCaption})}
+
+Handles the {\itshape event} with a transition to {\itshape state} usage\+:
+
+Arguments\+:
+
+state\+\_\+t describes the target state tha belongs to the event event\+\_\+t describes the event to handle
+
+Return value\+:
+
+the {\itshape new state}
+
+Flushes an unexpected event, an event that does not match the state the FSM is in.
+
+Return value\+:
+
+.....to be documented....
+
+Adds a new State to the FSM matrix. The function is used to build the skeleton of de FSM-\/model
+
+usage\+:
+
+Arguments\+:
+
+{\itshape state} describes the {\itshape state} as an enumerated value typed as state\+\_\+t
+
+$\ast$$\ast$funcs$\ast$ a pointer to a structure describing the state functions the \mbox{\hyperlink{structstate__funcs__t}{state\+\_\+funcs\+\_\+t}} uses functionpointers to an entry function and an exit function
+
+Example\+:
+
+FSM\+\_\+\+Add\+State(S\+\_\+\+INITIALISED\+\_\+\+SUBSYSTEMS,\&(\mbox{\hyperlink{structstate__funcs__t}{state\+\_\+funcs\+\_\+t}})\{S\+\_\+\+Initialised\+Sub\+Systems\+\_\+on\+Entry,S\+\_\+\+Initialised\+Sub\+Systems\+\_\+on\+Exit\}); \mbox{\Hypertarget{fsm_8c_a810caaa83c83118a51bdbd1d87fa0417}\label{fsm_8c_a810caaa83c83118a51bdbd1d87fa0417}} 
+\index{fsm.c@{fsm.c}!FSM\_FlushEnexpectedEvents@{FSM\_FlushEnexpectedEvents}}
+\index{FSM\_FlushEnexpectedEvents@{FSM\_FlushEnexpectedEvents}!fsm.c@{fsm.c}}
+\doxysubsubsection{\texorpdfstring{FSM\_FlushEnexpectedEvents()}{FSM\_FlushEnexpectedEvents()}}
+{\footnotesize\ttfamily void FSM\+\_\+\+Flush\+Enexpected\+Events (\begin{DoxyParamCaption}\item[{const bool}]{flush }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fsm_8c_a585470759896acd5c68f02ee7dbbebb2}\label{fsm_8c_a585470759896acd5c68f02ee7dbbebb2}} 
+\index{fsm.c@{fsm.c}!FSM\_GetEvent@{FSM\_GetEvent}}
+\index{FSM\_GetEvent@{FSM\_GetEvent}!fsm.c@{fsm.c}}
+\doxysubsubsection{\texorpdfstring{FSM\_GetEvent()}{FSM\_GetEvent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{events_8h_a2fb9b58e4e5f14f40af8b4a1425841f8}{event\+\_\+t}} FSM\+\_\+\+Get\+Event (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fsm_8c_aa8ce0d4c030e0543443b89f98752d6a8}\label{fsm_8c_aa8ce0d4c030e0543443b89f98752d6a8}} 
+\index{fsm.c@{fsm.c}!FSM\_GetState@{FSM\_GetState}}
+\index{FSM\_GetState@{FSM\_GetState}!fsm.c@{fsm.c}}
+\doxysubsubsection{\texorpdfstring{FSM\_GetState()}{FSM\_GetState()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{states_8h_aa0aafed44fec19806d8f9ad834be1248}{state\+\_\+t}} FSM\+\_\+\+Get\+State (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fsm_8c_a0ec9f3c0e0d78ca8070e50de321f13cb}\label{fsm_8c_a0ec9f3c0e0d78ca8070e50de321f13cb}} 
+\index{fsm.c@{fsm.c}!FSM\_NoEvents@{FSM\_NoEvents}}
+\index{FSM\_NoEvents@{FSM\_NoEvents}!fsm.c@{fsm.c}}
+\doxysubsubsection{\texorpdfstring{FSM\_NoEvents()}{FSM\_NoEvents()}}
+{\footnotesize\ttfamily bool FSM\+\_\+\+No\+Events (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fsm_8c_a779ec4b8b7471abd702be7b350adb7a9}\label{fsm_8c_a779ec4b8b7471abd702be7b350adb7a9}} 
+\index{fsm.c@{fsm.c}!FSM\_NofEvents@{FSM\_NofEvents}}
+\index{FSM\_NofEvents@{FSM\_NofEvents}!fsm.c@{fsm.c}}
+\doxysubsubsection{\texorpdfstring{FSM\_NofEvents()}{FSM\_NofEvents()}}
+{\footnotesize\ttfamily uint8\+\_\+t FSM\+\_\+\+Nof\+Events (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fsm_8c_ac48e5304604c92cdae2219ee9acd72dc}\label{fsm_8c_ac48e5304604c92cdae2219ee9acd72dc}} 
+\index{fsm.c@{fsm.c}!FSM\_PeekForEvent@{FSM\_PeekForEvent}}
+\index{FSM\_PeekForEvent@{FSM\_PeekForEvent}!fsm.c@{fsm.c}}
+\doxysubsubsection{\texorpdfstring{FSM\_PeekForEvent()}{FSM\_PeekForEvent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{events_8h_a2fb9b58e4e5f14f40af8b4a1425841f8}{event\+\_\+t}} FSM\+\_\+\+Peek\+For\+Event (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fsm_8c_a616fcadd22b9cd625a67e92655bf4ddc}\label{fsm_8c_a616fcadd22b9cd625a67e92655bf4ddc}} 
+\index{fsm.c@{fsm.c}!FSM\_RevertModel@{FSM\_RevertModel}}
+\index{FSM\_RevertModel@{FSM\_RevertModel}!fsm.c@{fsm.c}}
+\doxysubsubsection{\texorpdfstring{FSM\_RevertModel()}{FSM\_RevertModel()}}
+{\footnotesize\ttfamily void FSM\+\_\+\+Revert\+Model (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fsm_8c_adda160066f8e0f5231b74bac683291f6}\label{fsm_8c_adda160066f8e0f5231b74bac683291f6}} 
+\index{fsm.c@{fsm.c}!FSM\_RunStateMachine@{FSM\_RunStateMachine}}
+\index{FSM\_RunStateMachine@{FSM\_RunStateMachine}!fsm.c@{fsm.c}}
+\doxysubsubsection{\texorpdfstring{FSM\_RunStateMachine()}{FSM\_RunStateMachine()}}
+{\footnotesize\ttfamily void FSM\+\_\+\+Run\+State\+Machine (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{states_8h_aa0aafed44fec19806d8f9ad834be1248}{state\+\_\+t}}}]{init\+\_\+state,  }\item[{\mbox{\hyperlink{events_8h_a2fb9b58e4e5f14f40af8b4a1425841f8}{event\+\_\+t}}}]{start\+\_\+event }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fsm_8c_a5cf3a6d3a621d1f10f7eb91651840286}\label{fsm_8c_a5cf3a6d3a621d1f10f7eb91651840286}} 
+\index{fsm.c@{fsm.c}!FSM\_SetState@{FSM\_SetState}}
+\index{FSM\_SetState@{FSM\_SetState}!fsm.c@{fsm.c}}
+\doxysubsubsection{\texorpdfstring{FSM\_SetState()}{FSM\_SetState()}}
+{\footnotesize\ttfamily void FSM\+\_\+\+Set\+State (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{states_8h_aa0aafed44fec19806d8f9ad834be1248}{state\+\_\+t}}}]{newstate }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{fsm_8c_aff0eca293353b2ac3d3d2659b0435e94}\label{fsm_8c_aff0eca293353b2ac3d3d2659b0435e94}} 
+\index{fsm.c@{fsm.c}!FSM\_WaitForEvent@{FSM\_WaitForEvent}}
+\index{FSM\_WaitForEvent@{FSM\_WaitForEvent}!fsm.c@{fsm.c}}
+\doxysubsubsection{\texorpdfstring{FSM\_WaitForEvent()}{FSM\_WaitForEvent()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{events_8h_a2fb9b58e4e5f14f40af8b4a1425841f8}{event\+\_\+t}} FSM\+\_\+\+Wait\+For\+Event (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{fsm_8c_a1b45099bcbab93540950bf9af7924c3b}\label{fsm_8c_a1b45099bcbab93540950bf9af7924c3b}} 
+\index{fsm.c@{fsm.c}!events@{events}}
+\index{events@{events}!fsm.c@{fsm.c}}
+\doxysubsubsection{\texorpdfstring{events}{events}}
+{\footnotesize\ttfamily \mbox{\hyperlink{events_8h_a2fb9b58e4e5f14f40af8b4a1425841f8}{event\+\_\+t}} events\mbox{[}\mbox{\hyperlink{fsm_8h_a045f6561bd654b20f9522ae345e753b7}{MAX\+\_\+\+EVENTS\+\_\+\+IN\+\_\+\+BUFFER}}\mbox{]}}
+
+\mbox{\Hypertarget{fsm_8c_a3b9a5c6d048e3227ba57b672531434ef}\label{fsm_8c_a3b9a5c6d048e3227ba57b672531434ef}} 
+\index{fsm.c@{fsm.c}!numOfStates@{numOfStates}}
+\index{numOfStates@{numOfStates}!fsm.c@{fsm.c}}
+\doxysubsubsection{\texorpdfstring{numOfStates}{numOfStates}}
+{\footnotesize\ttfamily int num\+Of\+States}
+
+\mbox{\Hypertarget{fsm_8c_a7f391370be70481ed08e44d3b1b9c197}\label{fsm_8c_a7f391370be70481ed08e44d3b1b9c197}} 
+\index{fsm.c@{fsm.c}!numOfTransitions@{numOfTransitions}}
+\index{numOfTransitions@{numOfTransitions}!fsm.c@{fsm.c}}
+\doxysubsubsection{\texorpdfstring{numOfTransitions}{numOfTransitions}}
+{\footnotesize\ttfamily int num\+Of\+Transitions}
+
+\mbox{\Hypertarget{fsm_8c_a7b61783e0072144930caffdb82a64868}\label{fsm_8c_a7b61783e0072144930caffdb82a64868}} 
+\index{fsm.c@{fsm.c}!state\_funcs@{state\_funcs}}
+\index{state\_funcs@{state\_funcs}!fsm.c@{fsm.c}}
+\doxysubsubsection{\texorpdfstring{state\_funcs}{state\_funcs}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structstate__funcs__t}{state\+\_\+funcs\+\_\+t}} state\+\_\+funcs\mbox{[}\mbox{\hyperlink{fsm_8h_a9568de9296df1e94aeb0b7f24cc678a9}{MAX\+\_\+\+STATES}}\mbox{]} = \{0\}}
+
+\mbox{\Hypertarget{fsm_8c_a6bb16cd8ee49ec10b54647496cf83c4b}\label{fsm_8c_a6bb16cd8ee49ec10b54647496cf83c4b}} 
+\index{fsm.c@{fsm.c}!transitions@{transitions}}
+\index{transitions@{transitions}!fsm.c@{fsm.c}}
+\doxysubsubsection{\texorpdfstring{transitions}{transitions}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structtransition__t}{transition\+\_\+t}} transitions\mbox{[}\mbox{\hyperlink{fsm_8h_aeec1679e27970e5a5c2a4c90ef2d1f62}{MAX\+\_\+\+TRANSITIONS}}\mbox{]}}
+

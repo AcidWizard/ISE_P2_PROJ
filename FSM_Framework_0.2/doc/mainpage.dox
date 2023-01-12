@@ -14,8 +14,11 @@ Press the green button down left to the editor for compiling the code project.
 
 \section sec2 User manual
 
-Start the application as follows: ...
+Start the application as follows: 
 
-\todo Write a complete user manual.
+- Open FSM_Framework_0.2/app/FSM_Framework.pro in QTCreator
 
-*/
+- Open the main.c file from the Project View
+
+- Press Ctrl+R to run program
+

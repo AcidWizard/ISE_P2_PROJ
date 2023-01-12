@@ -1,0 +1,115 @@
+\hypertarget{system_errors_8h}{}\doxysection{app/console\+\_\+functions/system\+Errors.h File Reference}
+\label{system_errors_8h}\index{app/console\_functions/systemErrors.h@{app/console\_functions/systemErrors.h}}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef unsigned char \mbox{\hyperlink{system_errors_8h_af31367c04986d13821f0069bd06c0294}{system\+Errors\+\_\+t}}
+\begin{DoxyCompactList}\small\item\em Type name for bit mapped errors\+: 8 bits. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \mbox{\hyperlink{system_errors_8h_ac7659d73a8cdedc08e9f566bb406689c}{error\+\_\+t}} \{ \mbox{\hyperlink{system_errors_8h_ac7659d73a8cdedc08e9f566bb406689cab5d32476c973dcd3b1424a6f7162bdad}{ERR\+\_\+\+INIT\+\_\+\+CNA}}
+, \mbox{\hyperlink{system_errors_8h_ac7659d73a8cdedc08e9f566bb406689caf5fda813833bbba4c1529b6aa922feba}{ERR\+\_\+\+INIT\+\_\+\+CLD}}
+, \mbox{\hyperlink{system_errors_8h_ac7659d73a8cdedc08e9f566bb406689ca0e53baa0c3f8a4d24d866a8a6c6c0424}{ERR\+\_\+\+INIT\+\_\+\+CHD}}
+ \}
+\begin{DoxyCompactList}\small\item\em Error bit index values. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \mbox{\hyperlink{system_errors_8h_a38da225ccfc87971539a56103b0f4237}{set\+System\+Error\+Bit}} (\mbox{\hyperlink{system_errors_8h_ac7659d73a8cdedc08e9f566bb406689c}{error\+\_\+t}} err)
+\item 
+int \mbox{\hyperlink{system_errors_8h_a716a73ffc4ebeefc9efa4504b353e4c8}{get\+System\+Error\+Bit}} (\mbox{\hyperlink{system_errors_8h_ac7659d73a8cdedc08e9f566bb406689c}{error\+\_\+t}} err)
+\item 
+\mbox{\hyperlink{system_errors_8h_af31367c04986d13821f0069bd06c0294}{system\+Errors\+\_\+t}} \mbox{\hyperlink{system_errors_8h_af2e7dc52f25ca3ba2d5a8c8c24050998}{get\+System\+Error\+Bits}} (void)
+\item 
+const char $\ast$ \mbox{\hyperlink{system_errors_8h_a5c672aa5c3f206305d76f537df7a40d0}{get\+System\+Error\+Bits\+String}} (void)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Typedef Documentation}
+\mbox{\Hypertarget{system_errors_8h_af31367c04986d13821f0069bd06c0294}\label{system_errors_8h_af31367c04986d13821f0069bd06c0294}} 
+\index{systemErrors.h@{systemErrors.h}!systemErrors\_t@{systemErrors\_t}}
+\index{systemErrors\_t@{systemErrors\_t}!systemErrors.h@{systemErrors.h}}
+\doxysubsubsection{\texorpdfstring{systemErrors\_t}{systemErrors\_t}}
+{\footnotesize\ttfamily typedef unsigned char \mbox{\hyperlink{system_errors_8h_af31367c04986d13821f0069bd06c0294}{system\+Errors\+\_\+t}}}
+
+
+
+Type name for bit mapped errors\+: 8 bits. 
+
+
+
+\doxysubsection{Enumeration Type Documentation}
+\mbox{\Hypertarget{system_errors_8h_ac7659d73a8cdedc08e9f566bb406689c}\label{system_errors_8h_ac7659d73a8cdedc08e9f566bb406689c}} 
+\index{systemErrors.h@{systemErrors.h}!error\_t@{error\_t}}
+\index{error\_t@{error\_t}!systemErrors.h@{systemErrors.h}}
+\doxysubsubsection{\texorpdfstring{error\_t}{error\_t}}
+{\footnotesize\ttfamily enum \mbox{\hyperlink{system_errors_8h_ac7659d73a8cdedc08e9f566bb406689c}{error\+\_\+t}}}
+
+
+
+Error bit index values. 
+
+\begin{DoxyEnumFields}{Enumerator}
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR\_INIT\_CNA@{ERR\_INIT\_CNA}!systemErrors.h@{systemErrors.h}}\index{systemErrors.h@{systemErrors.h}!ERR\_INIT\_CNA@{ERR\_INIT\_CNA}}}\mbox{\Hypertarget{system_errors_8h_ac7659d73a8cdedc08e9f566bb406689cab5d32476c973dcd3b1424a6f7162bdad}\label{system_errors_8h_ac7659d73a8cdedc08e9f566bb406689cab5d32476c973dcd3b1424a6f7162bdad}} 
+ERR\+\_\+\+INIT\+\_\+\+CNA&Initialisation error Coin Acceptor selftest. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR\_INIT\_CLD@{ERR\_INIT\_CLD}!systemErrors.h@{systemErrors.h}}\index{systemErrors.h@{systemErrors.h}!ERR\_INIT\_CLD@{ERR\_INIT\_CLD}}}\mbox{\Hypertarget{system_errors_8h_ac7659d73a8cdedc08e9f566bb406689caf5fda813833bbba4c1529b6aa922feba}\label{system_errors_8h_ac7659d73a8cdedc08e9f566bb406689caf5fda813833bbba4c1529b6aa922feba}} 
+ERR\+\_\+\+INIT\+\_\+\+CLD&Initialisation error Cola Dispenser selftest. \\
+\hline
+
+\raisebox{\heightof{T}}[0pt][0pt]{\index{ERR\_INIT\_CHD@{ERR\_INIT\_CHD}!systemErrors.h@{systemErrors.h}}\index{systemErrors.h@{systemErrors.h}!ERR\_INIT\_CHD@{ERR\_INIT\_CHD}}}\mbox{\Hypertarget{system_errors_8h_ac7659d73a8cdedc08e9f566bb406689ca0e53baa0c3f8a4d24d866a8a6c6c0424}\label{system_errors_8h_ac7659d73a8cdedc08e9f566bb406689ca0e53baa0c3f8a4d24d866a8a6c6c0424}} 
+ERR\+\_\+\+INIT\+\_\+\+CHD&Initialisation error Change Dispenser selftest. \\
+\hline
+
+\end{DoxyEnumFields}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{system_errors_8h_a716a73ffc4ebeefc9efa4504b353e4c8}\label{system_errors_8h_a716a73ffc4ebeefc9efa4504b353e4c8}} 
+\index{systemErrors.h@{systemErrors.h}!getSystemErrorBit@{getSystemErrorBit}}
+\index{getSystemErrorBit@{getSystemErrorBit}!systemErrors.h@{systemErrors.h}}
+\doxysubsubsection{\texorpdfstring{getSystemErrorBit()}{getSystemErrorBit()}}
+{\footnotesize\ttfamily int get\+System\+Error\+Bit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{system_errors_8h_ac7659d73a8cdedc08e9f566bb406689c}{error\+\_\+t}}}]{err }\end{DoxyParamCaption})}
+
+Set error bit. 
+\begin{DoxyParams}{Parameters}
+{\em err} & error bit index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+boolean value 0 or 1. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{system_errors_8h_af2e7dc52f25ca3ba2d5a8c8c24050998}\label{system_errors_8h_af2e7dc52f25ca3ba2d5a8c8c24050998}} 
+\index{systemErrors.h@{systemErrors.h}!getSystemErrorBits@{getSystemErrorBits}}
+\index{getSystemErrorBits@{getSystemErrorBits}!systemErrors.h@{systemErrors.h}}
+\doxysubsubsection{\texorpdfstring{getSystemErrorBits()}{getSystemErrorBits()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{system_errors_8h_af31367c04986d13821f0069bd06c0294}{system\+Errors\+\_\+t}} get\+System\+Error\+Bits (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+value of system\+Error\+Bits. 
+\end{DoxyReturn}
+\mbox{\Hypertarget{system_errors_8h_a5c672aa5c3f206305d76f537df7a40d0}\label{system_errors_8h_a5c672aa5c3f206305d76f537df7a40d0}} 
+\index{systemErrors.h@{systemErrors.h}!getSystemErrorBitsString@{getSystemErrorBitsString}}
+\index{getSystemErrorBitsString@{getSystemErrorBitsString}!systemErrors.h@{systemErrors.h}}
+\doxysubsubsection{\texorpdfstring{getSystemErrorBitsString()}{getSystemErrorBitsString()}}
+{\footnotesize\ttfamily const char $\ast$ get\+System\+Error\+Bits\+String (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+\begin{DoxyReturn}{Returns}
+string showing 8 error bits in binary format. Example\+: \char`\"{}11000000\char`\"{} 
+\end{DoxyReturn}
+\mbox{\Hypertarget{system_errors_8h_a38da225ccfc87971539a56103b0f4237}\label{system_errors_8h_a38da225ccfc87971539a56103b0f4237}} 
+\index{systemErrors.h@{systemErrors.h}!setSystemErrorBit@{setSystemErrorBit}}
+\index{setSystemErrorBit@{setSystemErrorBit}!systemErrors.h@{systemErrors.h}}
+\doxysubsubsection{\texorpdfstring{setSystemErrorBit()}{setSystemErrorBit()}}
+{\footnotesize\ttfamily int set\+System\+Error\+Bit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{system_errors_8h_ac7659d73a8cdedc08e9f566bb406689c}{error\+\_\+t}}}]{err }\end{DoxyParamCaption})}
+
+Set error bit. 
+\begin{DoxyParams}{Parameters}
+{\em err} & error bit index. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+previous value error bit. 
+\end{DoxyReturn}
