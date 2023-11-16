@@ -91,7 +91,7 @@ int main(void) {
    FSM_AddTransition(&(transition_t){ S_WAITINPUT,    E_INPUTCHANGED,      S_CHECKCHANGE    });
    FSM_AddTransition(&(transition_t){ S_CHECKCHANGE,  E_NOACTION,          S_WAITINPUT      });
    FSM_AddTransition(&(transition_t){ S_CHECKCHANGE,  E_OUTSIDEBOUNDS,     S_LOGERROR       });
-   FSM_AddTransition(&(transition_t){ S_LOGERROR,     E_ERRORLOGGED,       S_WAITINPUT      });
+   FSM_AddTransition(&(transition_t){ S_LOGERROR,     E_ERRORLOGGED,       S_INIT           });
    FSM_AddTransition(&(transition_t){ S_CHECKCHANGE,  E_CO2LOW,            S_AIRFLOW        });
    FSM_AddTransition(&(transition_t){ S_CHECKCHANGE,  E_MOISTURELOW,       S_MOISTURIZE     });
    FSM_AddTransition(&(transition_t){ S_CHECKCHANGE,  E_TOOCOLD,           S_HEAT           });
