@@ -30,5 +30,5 @@ Subject: Automated plant growing
 
 ### **To Do:**
 - [x] Decide on functional requirements
-- [ ] Write Working Plan
-- [ ] Design FSM(Finite State Machine)
+- [X] Write Working Plan
+- [X] Design FSM(Finite State Machine)

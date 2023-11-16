@@ -63,8 +63,6 @@ void OpenWindow(void);
 void Moisturize(void);
 void HeatPlant(void);
 
-///Helper function
-void delay_us(uint32_t d);
 
 /// Main
 int main(void) {
@@ -250,13 +248,6 @@ void S_heat_onEntry(void) {
     nextevent = E_RESET;
 
     FSM_AddEvent(nextevent);
-}
-
-// simulate delay in microseconds
-void delay_us(uint32_t d)
-{
-   DCSdebugSystemInfo("Delay waiting for %d micro-seconds", d);
-   sleep(10000);
 }
 
 
